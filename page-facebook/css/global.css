@@ -1,0 +1,652 @@
+/* global.css */
+
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+:root {
+    --facebook-blue: #1877f2;
+    --facebook-green: #31a24c;
+    --background-color: #f0f2f5;
+    --card-background: #ffffff;
+    --text-color: #050505;
+    --secondary-text: #65676b;
+    --border-color: #dadde1;
+    --facebook-gray: #e4e6eb;
+    --shadow-small: rgba(0, 0, 0, 0.1) 0px 1px 2px;
+    --shadow-dark: rgba(0, 0, 0, 0.2) 0px 4px 12px;
+    --online-status-dot: #31a24c;
+    --unread-notification: #e7f3ff;
+}
+
+/* global.css */
+
+.header-overlay {
+    position: absolute;
+    top: 56px; /* Below the header */
+    /* ... باقي التنسيقات ... */
+    z-index: 1001;
+    /* الكود ده هو الأهم لإخفاء القائمة في البداية */
+    display: none; /* تأكد أن هذا السطر موجود */
+    opacity: 0; /* للتحضير لإضافة تأثيرات الظهور التدريجي لو حبيت */
+    visibility: hidden; /* للتأكد من أنها غير قابلة للتفاعل */
+    transition: opacity 0.3s ease, visibility 0.3s ease; /* لإضافة نعومة في الظهور */
+}
+
+/* الكلاس اللي بتضيفه الـ JavaScript لما القائمة بتظهر */
+.header-overlay.active {
+    display: block; /* بتظهرها */
+    opacity: 1; /* بتظهرها تدريجياً */
+    visibility: visible; /* بتخليها قابلة للتفاعل */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: var(--background-color);
+    direction: ltr; /* Set default text direction to LTR */
+    color: var(--text-color);
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* Header */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 20px;
+    background-color: var(--card-background);
+    box-shadow: var(--shadow-small);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.header-section {
+    display: flex;
+    align-items: center;
+}
+
+.header-section.left {
+    flex: 1;
+    justify-content: flex-start;
+}
+
+.header-section.middle {
+    flex: 1;
+    justify-content: center;
+    gap: 10px;
+}
+
+.header-section.right {
+    flex: 1;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.facebook-logo .logo {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.search-box {
+    position: relative;
+    background-color: var(--facebook-gray);
+    border-radius: 50px;
+    padding: 8px 15px;
+    display: flex;
+    align-items: center;
+    width: 240px;
+}
+
+.search-box i {
+    color: var(--secondary-text);
+    margin-right: 8px;
+}
+
+.search-box input {
+    border: none;
+    background: transparent;
+    outline: none;
+    font-size: 15px;
+    width: 100%;
+    color: var(--text-color);
+}
+
+.nav-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 110px; /* Wider for better click area */
+    height: 50px;
+    font-size: 24px;
+    color: var(--secondary-text);
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.2s ease, border-bottom 0.2s ease;
+    border-bottom: 3px solid transparent; /* For active state */
+}
+
+.nav-icon:hover {
+    background-color: var(--facebook-gray);
+}
+
+.nav-icon.active {
+    color: var(--facebook-blue);
+    border-bottom: 3px solid var(--facebook-blue);
+}
+
+.header-button {
+    width: 40px;
+    height: 40px;
+    background-color: var(--facebook-gray);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    color: var(--text-color);
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+.header-button:hover {
+    background-color: #d8dadf;
+}
+
+.user-profile-icon img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Shared Card Style */
+.card {
+    background-color: var(--card-background);
+    border-radius: 8px;
+    box-shadow: var(--shadow-small);
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+/* Overlays (Messages, Notifications, Menu, Search History) */
+.header-overlay {
+    position: absolute;
+    background-color: var(--card-background);
+    border-radius: 8px;
+    box-shadow: var(--shadow-dark);
+    max-height: 80vh;
+    overflow-y: auto;
+    z-index: 1001; /* Above other content */
+    display: none; /* Hidden by default */
+    border: 1px solid var(--border-color);
+    top: 55px; /* Adjust based on header height */
+    direction: ltr; /* Default LTR for overlay content */
+}
+
+/* Specific overlay positioning */
+#messenger-overlay {
+    right: 20px;
+    width: 360px;
+}
+
+#notifications-overlay {
+    right: 70px; /* Adjusted to not overlap with Messenger's initial position */
+    width: 360px;
+}
+
+#menu-overlay {
+    width: 800px; /* Wider for main menu */
+    right: auto;
+    left: 50%;
+    transform: translateX(-50%); /* Center the menu overlay */
+    display: flex; /* Use flex for menu layout */
+    flex-direction: column;
+}
+
+.search-history-overlay {
+    width: 380px;
+    top: 50px;
+    left: 10px;
+    padding: 0;
+    box-shadow: var(--shadow-dark);
+}
+
+.overlay-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.overlay-header h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text-color);
+}
+.post-image {
+    width: 100%;
+    max-height: 500px; /* أقصى ارتفاع للصور */
+    object-fit: contain; /* عشان متتشوهش وتظهر كاملة */
+    border-radius: var(--border-radius-medium);
+    margin-bottom: 12px;
+}
+
+.overlay-actions i {
+    font-size: 18px;
+    color: var(--secondary-text);
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+.overlay-search {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.overlay-search i {
+    color: var(--secondary-text);
+    margin-right: 10px;
+}
+
+.overlay-search input {
+    border: none;
+    background-color: var(--facebook-gray);
+    border-radius: 50px;
+    padding: 8px 15px;
+    width: 100%;
+    font-size: 15px;
+    color: var(--text-color);
+    outline: none;
+}
+
+.overlay-content {
+    padding: 10px 0;
+}
+
+.overlay-footer {
+    padding: 15px;
+    border-top: 1px solid var(--border-color);
+    text-align: center;
+}
+
+.overlay-footer a {
+    color: var(--facebook-blue);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* Chat & Notification items */
+.chat-item, .notification-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.chat-item:hover, .notification-item:hover {
+    background-color: var(--facebook-gray);
+}
+
+.chat-profile-pic, .notification-profile-pic {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.chat-info, .notification-info {
+    flex-grow: 1;
+}
+
+.chat-name, .notification-info p {
+    font-weight: 600;
+    color: var(--text-color);
+    font-size: 16px;
+    margin-bottom: 2px;
+}
+
+.last-message, .notification-time {
+    font-size: 14px;
+    color: var(--secondary-text);
+}
+
+.chat-time {
+    margin-left: 5px;
+}
+
+.notification-item.unread {
+    background-color: var(--unread-notification);
+}
+
+.notification-dot {
+    font-size: 8px;
+    color: var(--facebook-blue);
+    margin-left: 10px;
+}
+
+/* Menu Overlay Specific Styles */
+.menu-grid {
+    display: flex;
+    padding: 0;
+}
+
+.menu-left-panel {
+    flex: 2; /* Takes more space */
+    padding: 15px;
+    border-right: 1px solid var(--border-color);
+}
+
+.menu-right-panel {
+    flex: 1; /* Takes less space */
+    padding: 15px;
+}
+
+.menu-search {
+    margin-bottom: 15px;
+}
+
+.menu-item-group {
+    margin-bottom: 20px;
+}
+
+.menu-item-group h4 {
+    font-size: 17px;
+    color: var(--secondary-text);
+    margin-bottom: 10px;
+    padding: 5px 0;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 10px;
+    border-radius: 8px;
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+}
+
+.menu-item i {
+    font-size: 20px;
+    color: var(--secondary-text);
+    width: 24px; /* For icon alignment */
+    text-align: center;
+}
+
+.menu-item:hover {
+    background-color: var(--facebook-gray);
+}
+
+.menu-create-section.card {
+    padding: 15px;
+    box-shadow: none;
+    border: 1px solid var(--border-color);
+    background-color: var(--background-color);
+}
+
+.menu-create-section h4 {
+    font-size: 17px;
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+.create-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 10px;
+    border-radius: 6px;
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 14px;
+    transition: background-color 0.2s ease;
+}
+
+.create-item i {
+    font-size: 18px;
+    color: var(--secondary-text);
+}
+
+.create-item:hover {
+    background-color: var(--facebook-gray);
+}
+
+/* User Menu Overlay (from clicking user profile icon) */
+#user-menu-overlay {
+    right: 20px;
+    width: 360px;
+    padding: 0;
+}
+
+#user-menu-overlay .overlay-content {
+    padding: 0;
+}
+
+.user-menu-header {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    gap: 10px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.user-menu-header img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.user-menu-header div span {
+    display: block;
+    font-weight: 600;
+    color: var(--text-color);
+    font-size: 17px;
+}
+
+.user-menu-header div a {
+    font-size: 14px;
+    color: var(--facebook-blue);
+    text-decoration: none;
+}
+
+.user-menu-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    gap: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.user-menu-item:hover {
+    background-color: var(--facebook-gray);
+}
+
+.user-menu-item i {
+    width: 36px;
+    height: 36px;
+    background-color: var(--facebook-gray);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    color: var(--text-color);
+}
+
+.user-menu-item span {
+    font-size: 15px;
+    color: var(--text-color);
+}
+
+.user-menu-separator {
+    height: 1px;
+    background-color: var(--border-color);
+    margin: 10px 15px;
+}
+
+/* Responsive adjustments for header and overlays */
+@media (max-width: 992px) {
+    .main-header {
+        padding: 5px 10px;
+    }
+    .facebook-logo .logo {
+        height: 35px;
+    }
+    .search-box {
+        width: 180px;
+        padding: 6px 10px;
+    }
+    .search-box input {
+        font-size: 14px;
+    }
+    .nav-icon {
+        width: 80px;
+        font-size: 20px;
+        height: 45px;
+    }
+    .header-button {
+        width: 36px;
+        height: 36px;
+        font-size: 16px;
+    }
+    .user-profile-icon img {
+        width: 36px;
+        height: 36px;
+    }
+
+    .header-overlay {
+        right: 10px;
+        left: auto;
+        transform: none;
+        width: 340px;
+        top: 50px;
+    }
+    #notifications-overlay {
+        right: 60px;
+    }
+    #menu-overlay {
+        width: 90%;
+        right: auto;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .menu-grid {
+        flex-direction: column;
+    }
+    .menu-left-panel {
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+    }
+    .search-history-overlay {
+        width: 320px;
+        left: 10px;
+    }
+    #user-menu-overlay {
+        right: 10px;
+        width: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-header {
+        padding: 5px;
+    }
+    .facebook-logo {
+        display: none; /* Hide logo on small screens, just show search or nav icons */
+    }
+    .header-section.left {
+        flex-grow: 1; /* Allow search to take more space */
+    }
+    .search-box {
+        width: 100%; /* Full width for search */
+        margin-right: 0;
+        border-radius: 8px; /* Square corners */
+        background-color: transparent; /* No background */
+    }
+    .search-box i {
+        display: none; /* Hide search icon in input */
+    }
+    .search-box input {
+        padding: 0; /* Remove padding */
+        text-align: center; /* Center placeholder text */
+    }
+    .header-section.middle {
+        display: none; /* Hide main nav icons on mobile */
+    }
+    .header-section.right {
+        gap: 5px;
+        flex-grow: 0;
+    }
+    .header-button {
+        width: 32px;
+        height: 32px;
+        font-size: 14px;
+    }
+    .user-profile-icon img {
+        width: 32px;
+        height: 32px;
+    }
+
+    .header-overlay {
+        width: 95%; /* Full width on tiny screens */
+        left: 2.5%;
+        right: 2.5%;
+        top: 45px;
+        transform: none;
+    }
+    #notifications-overlay {
+        right: 2.5%;
+    }
+    #menu-overlay {
+        width: 95%;
+    }
+    .search-history-overlay {
+        width: 95%;
+        left: 2.5%;
+    }
+    #user-menu-overlay {
+        width: 95%;
+        right: 2.5%;
+    }
+    .overlay-header h3 {
+        font-size: 17px;
+    }
+    .overlay-actions i {
+        font-size: 16px;
+    }
+    .chat-profile-pic, .notification-profile-pic {
+        width: 40px;
+        height: 40px;
+    }
+    .chat-name, .notification-info p {
+        font-size: 15px;
+    }
+    .last-message, .notification-time {
+        font-size: 13px;
+    }
+    .menu-item, .create-item {
+        font-size: 14px;
+        padding: 8px 10px;
+    }
+    .menu-item i, .create-item i {
+        font-size: 18px;
+    }
+}

@@ -1,0 +1,339 @@
+/* groups.css */
+
+.groups-page-container {
+    display: flex;
+    padding-top: 70px; /* Space for fixed header */
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Groups Sidebar */
+.groups-sidebar {
+    flex: 0 0 320px;
+    background-color: var(--card-background);
+    border-right: 1px solid var(--border-color);
+    padding: 15px;
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.groups-sidebar::-webkit-scrollbar {
+    display: none;
+}
+
+.groups-sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.groups-sidebar-header h2 {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text-color);
+}
+
+.groups-sidebar-header .settings-icon {
+    width: 36px;
+    height: 36px;
+    background-color: var(--facebook-gray);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    color: var(--secondary-text);
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+.groups-sidebar-header .settings-icon:hover {
+    background-color: #d8dadf;
+}
+
+.groups-sidebar .create-group-btn {
+    width: 100%;
+    background-color: var(--facebook-gray);
+    color: var(--text-color);
+    border: none;
+    border-radius: 6px;
+    padding: 10px 15px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 15px;
+    transition: background-color 0.2s ease;
+}
+
+.groups-sidebar .create-group-btn:hover {
+    background-color: #d8dadf;
+}
+
+.groups-sidebar .search-box {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.groups-sidebar-nav-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+    margin-bottom: 5px;
+}
+
+.groups-sidebar-nav-item:hover {
+    background-color: var(--facebook-gray);
+}
+
+.groups-sidebar-nav-item.active {
+    background-color: var(--unread-notification);
+    color: var(--facebook-blue);
+}
+
+.nav-icon-circle {
+    width: 36px;
+    height: 36px;
+    background-color: var(--facebook-gray);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    color: var(--text-color);
+}
+
+.groups-sidebar-nav-item.active .nav-icon-circle {
+    background-color: var(--facebook-blue);
+    color: #fff;
+}
+
+.groups-sidebar-section {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+}
+
+.groups-sidebar-section h4 {
+    font-size: 17px;
+    color: var(--secondary-text);
+    margin-bottom: 15px;
+}
+
+.group-activity-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 0;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+.group-activity-item:hover {
+    background-color: var(--facebook-gray);
+    border-radius: 6px;
+}
+.group-activity-item .profile-pic {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px; /* Groups often have square icons */
+    object-fit: cover;
+}
+.group-activity-item span {
+    font-size: 15px;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+
+/* Main Groups Content */
+.groups-main-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--secondary-text) var(--background-color);
+}
+
+.groups-main-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.groups-main-content::-webkit-scrollbar-track {
+    background: var(--background-color);
+}
+
+.groups-main-content::-webkit-scrollbar-thumb {
+    background-color: var(--secondary-text);
+    border-radius: 10px;
+    border: 2px solid var(--background-color);
+}
+
+.group-suggestions-section {
+    margin-bottom: 30px;
+}
+
+.group-suggestions-section h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 15px;
+}
+
+.group-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.group-card {
+    background-color: var(--card-background);
+    border-radius: 8px;
+    box-shadow: var(--shadow-small);
+    overflow: hidden;
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--text-color);
+    transition: transform 0.2s ease;
+}
+
+.group-card:hover {
+    transform: translateY(-5px);
+}
+
+.group-cover-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.group-card-content {
+    padding: 15px;
+}
+
+.group-card-content h4 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 5px;
+    line-height: 1.3;
+}
+
+.group-card-content .members-count {
+    font-size: 14px;
+    color: var(--secondary-text);
+    margin-bottom: 15px;
+}
+
+.group-card-content .join-button {
+    width: 100%;
+    background-color: var(--facebook-blue);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 15px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.group-card-content .join-button:hover {
+    background-color: #2e69ee;
+}
+
+/* Responsive for Groups Page */
+@media (max-width: 992px) {
+    .groups-sidebar {
+        flex: 0 0 280px;
+        padding: 10px;
+    }
+    .groups-sidebar-header h2 {
+        font-size: 22px;
+    }
+    .groups-sidebar-nav-item {
+        font-size: 15px;
+        padding: 8px 10px;
+    }
+    .nav-icon-circle {
+        width: 32px;
+        height: 32px;
+        font-size: 16px;
+    }
+    .groups-main-content {
+        padding: 15px;
+    }
+    .group-grid {
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .groups-page-container {
+        flex-direction: column;
+        padding-top: 60px;
+        height: auto;
+    }
+    .groups-sidebar {
+        flex: 0 0 auto;
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+        padding: 15px 20px;
+        overflow-y: visible;
+    }
+    .groups-sidebar-header {
+        margin-bottom: 10px;
+    }
+    .groups-sidebar .create-group-btn {
+        margin-bottom: 10px;
+    }
+    .groups-sidebar .search-box {
+        margin-bottom: 10px;
+    }
+    .groups-sidebar-nav {
+        display: flex;
+        overflow-x: auto;
+        padding-bottom: 10px;
+        white-space: nowrap;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+    .groups-sidebar-nav::-webkit-scrollbar {
+        display: none;
+    }
+    .groups-sidebar-nav-item {
+        flex-shrink: 0;
+        margin-right: 10px;
+    }
+    .groups-sidebar-section {
+        display: none; /* Hide deeper sidebar sections on mobile */
+    }
+    .groups-main-content {
+        padding: 10px;
+    }
+    .group-grid {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    }
+}
+
+@media (max-width: 576px) {
+    .groups-main-content {
+        padding: 5px;
+    }
+    .group-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 10px;
+    }
+}

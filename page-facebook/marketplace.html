@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook - Marketplace</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/marketplace.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="header-section left">
+            <a href="/page-facebook/index.html" class="facebook-logo">
+                <img src="/page-facebook/images/facebook.png" alt="Facebook" class="logo">
+            </a>
+            <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" placeholder="Search Facebook" id="main-search-input">
+                <div id="search-history-overlay" class="header-overlay search-history-overlay">
+                    <div class="overlay-header">
+                        <h3>Recent Searches</h3>
+                        <a href="#" class="clear-all-search">Clear All</a>
+                    </div>
+                    <div class="overlay-content search-history-list">
+                        </div>
+                </div>
+            </div>
+        </div>
+        <nav class="header-section middle">
+            <a href="/page-facebook/index.html" class="nav-icon" title="Home"><i class="fa-solid fa-house"></i></a>
+            <a href="/page-facebook/watch.html" class="nav-icon" title="Watch"><i class="fa-solid fa-tv"></i></a>
+            <a href="/page-facebook/marketplace.html" class="nav-icon active" title="Marketplace"><i class="fa-solid fa-store"></i></a>
+            <a href="/page-facebook/groups.html" class="nav-icon" title="Groups"><i class="fa-solid fa-users"></i></a>
+            <a href="/page-facebook/gaming.html" class="nav-icon" title="Gaming"><i class="fa-solid fa-gamepad"></i></a>
+        </nav>
+        <div class="header-section right">
+            <a href="/page-facebook/profile.html" class="user-profile-icon" title="Profile">
+                <img src="/page-facebook/images/brand.jpg" alt="User Profile">
+            </a>
+            <a href="#" class="header-button" title="Create"><i class="fa-solid fa-plus"></i></a>
+            <a href="#" class="header-button" title="Messenger"><i class="fa-brands fa-facebook-messenger"></i></a>
+            <a href="#" class="header-button" title="Notifications"><i class="fa-solid fa-bell"></i></a>
+            <a href="#" class="header-button" title="Menu"><i class="fa-solid fa-bars"></i></a>
+        </div>
+    </header>
+
+    <div id="messenger-overlay" class="header-overlay">
+        <div class="overlay-header">
+            <h3>Chats</h3>
+            <div class="overlay-actions">
+                <i class="fa-solid fa-ellipsis-h"></i>
+                <i class="fa-solid fa-expand"></i>
+                <i class="fa-solid fa-video"></i>
+                <i class="fa-solid fa-pen-to-square"></i>
+            </div>
+        </div>
+        <div class="overlay-search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="Search Messenger">
+        </div>
+        <div class="overlay-content">
+            <div class="chat-item">
+                <img src="/page-facebook/images/user.png" alt="User" class="chat-profile-pic">
+                <div class="chat-info">
+                    <div class="chat-name">Ahmed H.</div>
+                    <div class="last-message">You: Looks good! <span class="chat-time">5m</span></div>
+                </div>
+            </div>
+            <div class="chat-item">
+                <img src="/page-facebook/images/user.png" alt="User" class="chat-profile-pic">
+                <div class="chat-info">
+                    <div class="chat-name">Sara J.</div>
+                    <div class="last-message">Okay, see you soon! <span class="chat-time">2h</span></div>
+                </div>
+            </div>
+            <div class="chat-item">
+                <img src="/page-facebook/images/user.png" alt="User" class="chat-profile-pic">
+                <div class="chat-info">
+                    <div class="chat-name">Family Group</div>
+                    <div class="last-message">Everyone: Happy Birthday! <span class="chat-time">Yesterday</span></div>
+                </div>
+            </div>
+            <div class="chat-item">
+                <img src="/page-facebook/images/user.png" alt="User" class="chat-profile-pic">
+                <div class="chat-info">
+                    <div class="chat-name">New Client</div>
+                    <div class="last-message">Thanks for the update. <span class="chat-time">Jul 19</span></div>
+                </div>
+            </div>
+            <div class="chat-item">
+                <img src="/page-facebook/images/user.png" alt="User" class="chat-profile-pic">
+                <div class="chat-info">
+                    <div class="chat-name">Team Project</div>
+                    <div class="last-message">Let's discuss this tomorrow. <span class="chat-time">Jul 18</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="overlay-footer">
+            <a href="#">See All in Messenger</a>
+        </div>
+    </div>
+
+    <div id="notifications-overlay" class="header-overlay">
+        <div class="overlay-header">
+            <h3>Notifications</h3>
+            <div class="overlay-actions">
+                <i class="fa-solid fa-ellipsis-h"></i>
+            </div>
+        </div>
+        <div class="overlay-content">
+            <div class="notification-item unread">
+                <img src="/page-facebook/images/user.png" alt="User" class="notification-profile-pic">
+                <div class="notification-info">
+                    <p><strong>Maria S.</strong> reacted to your photo.</p>
+                    <span class="notification-time">1 hour ago</span>
+                </div>
+                <i class="fa-solid fa-circle notification-dot"></i>
+            </div>
+            <div class="notification-item">
+                <img src="/page-facebook/images/user.png" alt="User" class="notification-profile-pic">
+                <div class="notification-info">
+                    <p><strong>Omar D.</strong> commented on your post.</p>
+                    <span class="notification-time">3 hours ago</span>
+                </div>
+            </div>
+            <div class="notification-item unread">
+                <img src="/page-facebook/images/user.png" alt="User" class="notification-profile-pic">
+                <div class="notification-info">
+                    <p><strong>Facebook</strong> updated its privacy policy.</p>
+                    <span class="notification-time">Yesterday</span>
+                </div>
+                <i class="fa-solid fa-circle notification-dot"></i>
+            </div>
+            <div class="notification-item">
+                <img src="/page-facebook/images/user.png" alt="User" class="notification-profile-pic">
+                <div class="notification-info">
+                    <p><strong>Ahmed F.</strong> sent you a friend request.</p>
+                    <span class="notification-time">2 days ago</span>
+                </div>
+            </div>
+            <div class="notification-item">
+                <img src="/page-facebook/images/user.png" alt="User" class="notification-profile-pic">
+                <div class="notification-info">
+                    <p>Your page "O'Clock" has 2 new followers.</p>
+                    <span class="notification-time">3 days ago</span>
+                </div>
+            </div>
+        </div>
+        <div class="overlay-footer">
+            <a href="#">See All Notifications</a>
+        </div>
+    </div>
+
+    <div id="menu-overlay" class="header-overlay large-overlay">
+        <div class="overlay-header">
+            <h3>Menu</h3>
+        </div>
+        <div class="overlay-content menu-grid">
+            <div class="menu-left-panel">
+                <div class="menu-search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Search Menu">
+                </div>
+                <div class="menu-item-group">
+                    <h4>Social</h4>
+                    <a href="#" class="menu-item"><i class="fa-solid fa-user-friends"></i> Friends</a>
+                    <a href="/page-facebook/groups.html" class="menu-item"><i class="fa-solid fa-users"></i> Groups</a>
+                    <a href="/page-facebook/marketplace.html" class="menu-item"><i class="fa-solid fa-store"></i> Marketplace</a>
+                    <a href="/page-facebook/watch.html" class="menu-item"><i class="fa-solid fa-tv"></i> Watch</a>
+                    <a href="#" class="menu-item"><i class="fa-solid fa-calendar-alt"></i> Events</a>
+                    <a href="#" class="menu-item"><i class="fa-solid fa-bookmark"></i> Saved</a>
+                    <a href="#" class="menu-item"><i class="fa-solid fa-flag"></i> Pages</a>
+                    <a href="#" class="menu-item"><i class="fa-solid fa-briefcase"></i> Jobs</a>
+                </div>
+                <div class="menu-item-group">
+                    <h4>Entertainment</h4>
+                    <a href="/page-facebook/gaming.html" class="menu-item"><i class="fa-solid fa-gamepad"></i> Gaming Video</a>
+                    <a href="#" class="menu-item"><i class="fa-solid fa-compact-disc"></i> Play Games</a>
+                    <a href="#" class="menu-item"><i class="fa-solid fa-photo-video"></i> Videos</a>
+                    <a href="#" class="menu-item"><i class="fa-solid fa-podcast"></i> Podcasts</a>
+                </div>
+                <div class="menu-item-group">
+                    <h4>Shopping</h4>
+                    <a href="#" class="menu-item"><i class="fa-solid fa-shopping-cart"></i> Orders & Payments</a>
+                </div>
+                <div class="menu-item-group">
+                    <h4>Personal</h4>
+                    <a href="#" class="menu-item"><i class="fa-solid fa-clock-rotate-left"></i> Memories</a>
+                    <a href="#" class="menu-item"><i class="fa-solid fa-calendar-check"></i> Events</a>
+                </div>
+                <div class="menu-item-group">
+                    <h4>Professional</h4>
+                    <a href="#" class="menu-item"><i class="fa-solid fa-briefcase"></i> Jobs</a>
+                    <a href="#" class="menu-item"><i class="fa-solid fa-chart-line"></i> Ads Manager</a>
+                </div>
+                <div class="menu-item-group">
+                    <h4>Community Resources</h4>
+                    <a href="#" class="menu-item"><i class="fa-solid fa-handshake"></i> Fundraisers</a>
+                    <a href="#" class="menu-item"><i class="fa-solid fa-briefcase-medical"></i> Blood Donations</a>
+                </div>
+            </div>
+            <div class="menu-right-panel">
+                <div class="menu-create-section card">
+                    <h4>Create</h4>
+                    <a href="#" class="create-item"><i class="fa-solid fa-plus-circle"></i> Post</a>
+                    <a href="#" class="create-item"><i class="fa-solid fa-book-open"></i> Story</a>
+                    <a href="#" class="create-item"><i class="fa-solid fa-video"></i> Room</a>
+                    <a href="#" class="create-item"><i class="fa-solid fa-flag"></i> Page</a>
+                    <a href="#" class="create-item"><i class="fa-solid fa-ad"></i> Ad</a>
+                    <a href="/page-facebook/groups.html" class="create-item"><i class="fa-solid fa-users"></i> Group</a>
+                    <a href="#" class="create-item"><i class="fa-solid fa-calendar-check"></i> Event</a>
+                    <a href="/page-facebook/marketplace.html" class="create-item"><i class="fa-solid fa-store-alt"></i> Marketplace Listing</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="user-menu-overlay" class="header-overlay">
+        <div class="overlay-content">
+            <div class="user-menu-header">
+                <img src="/page-facebook/images/brand.jpg" alt="User Profile">
+                <div>
+                    <span>Your Page Name</span>
+                    <a href="/page-facebook/profile.html">See your profile</a>
+                </div>
+            </div>
+            <div class="user-menu-separator"></div>
+            <a href="#" class="user-menu-item">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings & Privacy</span>
+            </a>
+            <a href="#" class="user-menu-item">
+                <i class="fa-solid fa-question-circle"></i>
+                <span>Help & Support</span>
+            </a>
+            <a href="#" class="user-menu-item">
+                <i class="fa-solid fa-moon"></i>
+                <span>Display & Accessibility</span>
+            </a>
+            <a href="#" class="user-menu-item">
+                <i class="fa-solid fa-comment-dots"></i>
+                <span>Give Feedback</span>
+            </a>
+            <div class="user-menu-separator"></div>
+            <a href="#" class="user-menu-item">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Log Out</span>
+            </a>
+        </div>
+    </div>
+
+    <main class="marketplace-page-container">
+        <aside class="marketplace-sidebar">
+            <div class="marketplace-sidebar-header">
+                <h2>Marketplace</h2>
+                <div class="settings-icon"><i class="fa-solid fa-gear"></i></div>
+            </div>
+            <button class="create-listing-btn"><i class="fa-solid fa-plus-circle"></i> Create New Listing</button>
+            <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" placeholder="Search Marketplace">
+            </div>
+            <nav class="marketplace-sidebar-nav">
+                <a href="#" class="marketplace-sidebar-nav-item active">
+                    <div class="nav-icon-circle"><i class="fa-solid fa-cubes"></i></div>
+                    Browse All
+                </a>
+                <a href="#" class="marketplace-sidebar-nav-item">
+                    <div class="nav-icon-circle"><i class="fa-solid fa-bell"></i></div>
+                    Notifications
+                </a>
+                <a href="#" class="marketplace-sidebar-nav-item">
+                    <div class="nav-icon-circle"><i class="fa-solid fa-inbox"></i></div>
+                    Inbox
+                </a>
+                <a href="#" class="marketplace-sidebar-nav-item">
+                    <div class="nav-icon-circle"><i class="fa-solid fa-bookmark"></i></div>
+                    Saved
+                </a>
+                <a href="#" class="marketplace-sidebar-nav-item">
+                    <div class="nav-icon-circle"><i class="fa-solid fa-bag-shopping"></i></div>
+                    Your listings
+                </a>
+                <a href="#" class="marketplace-sidebar-nav-item">
+                    <div class="nav-icon-circle"><i class="fa-solid fa-truck"></i></div>
+                    Buying
+                </a>
+                <a href="#" class="marketplace-sidebar-nav-item">
+                    <div class="nav-icon-circle"><i class="fa-solid fa-tag"></i></div>
+                    Selling
+                </a>
+            </nav>
+<div class="marketplace-sidebar-section">
+                <h4>Filters</h4>
+                <div class="location-filter">
+                    Location: <input type="text" value="New York"> <i class="fa-solid fa-sliders-h"></i>
+                </div>
+                <div class="location-filter">
+                    Radius: <select>
+                        <option>10 miles</option>
+                        <option>20 miles</option>
+                        <option>50 miles</option>
+                    </select>
+                </div>
+                <h4>Categories</h4>
+                <a href="#" class="marketplace-sidebar-nav-item"><div class="nav-icon-circle"><i class="fa-solid fa-watch"></i></div> Watches</a>
+                <a href="#" class="marketplace-sidebar-nav-item"><div class="nav-icon-circle"><i class="fa-solid fa-car"></i></div> Vehicles</a>
+                <a href="#" class="marketplace-sidebar-nav-item"><div class="nav-icon-circle"><i class="fa-solid fa-house"></i></div> Property Rentals</a>
+                </div>
+        </aside>
+
+        <section class="marketplace-main-content">
+            <h3 class="section-title">Today's Picks</h3>
+            <div class="marketplace-grid" id="marketplace-grid">
+                <a href="#" class="product-card">
+                    <div class="product-image-container">
+                        <img src="/page-facebook/images/luxury watches.jpg" alt="Luxury Chronograph Watch" class="product-image" loading="lazy">
+                    </div>
+                    <div class="product-details">
+                        <span class="product-price">EGP 1,200</span>
+                        <p class="product-title">Luxury Chronograph Watch</p>
+                        <span class="product-location">Giza, Egypt</span>
+                    </div>
+                </a>
+
+                <a href="#" class="product-card">
+                    <div class="product-image-container">
+                        <img src="/page-facebook/images/dress watches.jpg" alt="Classic Leather Strap Watch" class="product-image" loading="lazy">
+                    </div>
+                    <div class="product-details">
+                        <span class="product-price">EGP 850</span>
+                        <p class="product-title">Classic Leather Strap Watch</p>
+                        <span class="product-location">Cairo, Egypt</span>
+                    </div>
+                </a>
+
+                <a href="#" class="product-card">
+                    <div class="product-image-container">
+                        <img src="/page-facebook/images/chronograph watches.jpg" alt="Smartwatch with Fitness Tracker" class="product-image" loading="lazy">
+                    </div>
+                    <div class="product-details">
+                        <span class="product-price">EGP 1,500</span>
+                        <p class="product-title">Smartwatch with Fitness Tracker</p>
+                        <span class="product-location">Nasr City, Cairo</span>
+                    </div>
+                </a>
+
+                <a href="#" class="product-card">
+                    <div class="product-image-container">
+                        <img src="/page-facebook/images/sports watches.jpg" alt="Durable Sport Watch" class="product-image" loading="lazy">
+                    </div>
+                    <div class="product-details">
+                        <span class="product-price">EGP 700</span>
+                        <p class="product-title">Durable Sport Watch</p>
+                        <span class="product-location">Sheikh Zayed, Giza</span>
+                    </div>
+                </a>
+
+                <a href="#" class="product-card">
+                    <div class="product-image-container">
+                        <img src="/page-facebook/images/smart watches.jpg" alt="Elegant Ladies Watch" class="product-image" loading="lazy">
+                    </div>
+                    <div class="product-details">
+                        <span class="product-price">EGP 1,100</span>
+                        <p class="product-title">Elegant Ladies Watch</p>
+                        <span class="product-location">Heliopolis, Cairo</span>
+                    </div>
+                </a>
+
+                <a href="#" class="product-card">
+                    <div class="product-image-container">
+                        <img src="/page-facebook/images/skeleton watches.jpg" alt="Vintage Style Pocket Watch" class="product-image" loading="lazy">
+                    </div>
+                    <div class="product-details">
+                        <span class="product-price">EGP 950</span>
+                        <p class="product-title">Vintage Style Pocket Watch</p>
+                        <span class="product-location">Mohandessin, Giza</span>
+                    </div>
+                </a>
+
+                <a href="#" class="product-card">
+                    <div class="product-image-container">
+                        <img src="/page-facebook/images/diver watches.jpg" alt="Professional Dive Watch" class="product-image" loading="lazy">
+                    </div>
+                    <div class="product-details">
+                        <span class="product-price">EGP 1,350</span>
+                        <p class="product-title">Professional Dive Watch</p>
+                        <span class="product-location">Maadi, Cairo</span>
+                    </div>
+                </a>
+
+                <a href="#" class="product-card">
+                    <div class="product-image-container">
+                        <img src="/page-facebook/images/field watches.jpg" alt="Minimalist Design Watch" class="product-image" loading="lazy">
+                    </div>
+                    <div class="product-details">
+                        <span class="product-price">EGP 600</span>
+                        <p class="product-title">Minimalist Design Watch</p>
+                        <span class="product-location">October City, Giza</span>
+                    </div>
+                </a>
+
+                <a href="#" class="product-card">
+                    <div class="product-image-container">
+                        <img src="/page-facebook/images/download (2).jpg" alt="Limited Edition Skeleton Watch" class="product-image" loading="lazy">
+                    </div>
+                    <div class="product-details">
+                        <span class="product-price">EGP 1,800</span>
+                        <p class="product-title">Limited Edition Skeleton Watch</p>
+                        <span class="product-location">Zamalek, Cairo</span>
+                    </div>
+                </a>
+
+                 <a href="#" class="product-card">
+                    <div class="product-image-container">
+                        <img src="/page-facebook/images/download(6).jpg" alt="Limited Edition Skeleton Watch" class="product-image" loading="lazy">
+                    </div>
+                    <div class="product-details">
+                        <span class="product-price">EGP 2,799</span>
+                        <p class="product-title">traffic Watch</p>
+                        <span class="product-location">90st, Cairo</span>
+                    </div>
+                </a>
+                 <a href="#" class="product-card">
+                    <div class="product-image-container">
+                        <img src="/page-facebook/images/download (5).jpg" alt="Limited Edition Skeleton Watch" class="product-image" loading="lazy">
+                    </div>
+                    <div class="product-details">
+                        <span class="product-price">EGP 3,800</span>
+                        <p class="product-title"> epic Watch</p>
+                        <span class="product-location">DownTown, Cairo</span>
+                    </div>
+                </a>
+                 <a href="#" class="product-card">
+                    <div class="product-image-container">
+                        <img src="/page-facebook/images/download (4).jpg" alt="Limited Edition Skeleton Watch" class="product-image" loading="lazy">
+                    </div>
+                    <div class="product-details">
+                        <span class="product-price">EGP 9,950</span>
+                        <p class="product-title"> Hyperd Watch</p>
+                        <span class="product-location">Giza, Cairo</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>

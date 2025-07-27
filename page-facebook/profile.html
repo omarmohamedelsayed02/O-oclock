@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook - O'Clock Store Profile</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/profile.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="header-section left">
+            <a href="/page-facebook/index.html" class="facebook-logo">
+                <img src="/page-facebook/images/facebook.png" alt="Facebook" class="logo">
+            </a>
+            <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" placeholder="Search Facebook" id="main-search-input">
+                <div id="search-history-overlay" class="header-overlay search-history-overlay">
+                    <div class="overlay-header">
+                        <h3>Recent Searches</h3>
+                        <a href="#" class="clear-all-search">Clear All</a>
+                    </div>
+                    <div class="overlay-content search-history-list">
+                        </div>
+                </div>
+            </div>
+        </div>
+        <nav class="header-section middle">
+            <a href="/page-facebook/index.html" class="nav-icon" title="Home"><i class="fa-solid fa-house"></i></a>
+            <a href="/page-facebook/watch.html" class="nav-icon" title="Watch"><i class="fa-solid fa-tv"></i></a>
+            <a href="/page-facebook/marketplace.html" class="nav-icon" title="Marketplace"><i class="fa-solid fa-store"></i></a>
+            <a href="/page-facebook/groups.html" class="nav-icon" title="Groups"><i class="fa-solid fa-users"></i></a>
+            <a href="/page-facebook/gaming.html" class="nav-icon" title="Gaming"><i class="fa-solid fa-gamepad"></i></a>
+        </nav>
+        <div class="header-section right">
+            <a href="/page-facebook/profile.html" class="user-profile-icon" title="Profile">
+                <img src="/page-facebook/images/brand.jpg" alt="User Profile">
+            </a>
+            <a href="#" class="header-button" title="Create"><i class="fa-solid fa-plus"></i></a>
+            <a href="#" class="header-button" title="Messenger"><i class="fa-brands fa-facebook-messenger"></i></a>
+            <a href="#" class="header-button" title="Notifications"><i class="fa-solid fa-bell"></i></a>
+            <a href="#" class="header-button" title="Menu"><i class="fa-solid fa-bars"></i></a>
+        </div>
+    </header>
+
+    <div id="messenger-overlay" class="header-overlay">
+        <div class="overlay-header">
+            <h3>Chats</h3>
+            <div class="overlay-actions">
+                <i class="fa-solid fa-ellipsis-h"></i>
+                <i class="fa-solid fa-expand"></i>
+                <i class="fa-solid fa-video"></i>
+                <i class="fa-solid fa-pen-to-square"></i>
+            </div>
+        </div>
+        <div class="overlay-search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="Search Messenger">
+        </div>
+        <div class="overlay-content">
+            <div class="chat-item">
+                <img src="/page-facebook/images/user.png" alt="User" class="chat-profile-pic">
+                <div class="chat-info">
+                    <div class="chat-name">Ahmed H.</div>
+                    <div class="last-message">You: Looks good! <span class="chat-time">5m</span></div>
+                </div>
+            </div>
+            <div class="chat-item">
+                <img src="/page-facebook/images/user.png" alt="User" class="chat-profile-pic">
+                <div class="chat-info">
+                    <div class="chat-name">Sara J.</div>
+                    <div class="last-message">Okay, see you soon! <span class="chat-time">2h</span></div>
+                </div>
+            </div>
+            <div class="chat-item">
+                <img src="/page-facebook/images/user.png" alt="User" class="chat-profile-pic">
+                <div class="chat-info">
+                    <div class="chat-name">Family Group</div>
+                    <div class="last-message">Everyone: Happy Birthday! <span class="chat-time">Yesterday</span></div>
+                </div>
+            </div>
+            <div class="chat-item">
+                <img src="/page-facebook/images/user.png" alt="User" class="chat-profile-pic">
+                <div class="chat-info">
+                    <div class="chat-name">New Client</div>
+                    <div class="last-message">Thanks for the update. <span class="chat-time">Jul 19</span></div>
+                </div>
+            </div>
+            <div class="chat-item">
+                <img src="/page-facebook/images/user.png" alt="User" class="chat-profile-pic">
+                <div class="chat-info">
+                    <div class="chat-name">Team Project</div>
+                    <div class="last-message">Let's discuss this tomorrow. <span class="chat-time">Jul 18</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="overlay-footer">
+            <a href="#">See All in Messenger</a>
+        </div>
+    </div>
+
+    <div id="notifications-overlay" class="header-overlay">
+        <div class="overlay-header">
+            <h3>Notifications</h3>
+            <div class="overlay-actions">
+                <i class="fa-solid fa-ellipsis-h"></i>
+            </div>
+        </div>
+        <div class="overlay-content">
+            <div class="notification-item unread">
+                <img src="/page-facebook/images/user.png" alt="User" class="notification-profile-pic">
+                <div class="notification-info">
+                    <p><strong>Maria S.</strong> reacted to your photo.</p>
+                    <span class="notification-time">1 hour ago</span>
+                </div>
+                <i class="fa-solid fa-circle notification-dot"></i>
+            </div>
+            <div class="notification-item">
+                <img src="/page-facebook/images/user.png" alt="User" class="notification-profile-pic">
+                <div class="notification-info">
+                    <p><strong>Omar D.</strong> commented on your post.</p>
+                    <span class="notification-time">3 hours ago</span>
+                </div>
+            </div>
+            <div class="notification-item unread">
+                <img src="/page-facebook/images/user.png" alt="User" class="notification-profile-pic">
+                <div class="notification-info">
+                    <p><strong>Facebook</strong> updated its privacy policy.</p>
+                    <span class="notification-time">Yesterday</span>
+                </div>
+                <i class="fa-solid fa-circle notification-dot"></i>
+            </div>
+            <div class="notification-item">
+                <img src="/page-facebook/images/user.png" alt="User" class="notification-profile-pic">
+                <div class="notification-info">
+                    <p><strong>Ahmed F.</strong> sent you a friend request.</p>
+                    <span class="notification-time">2 days ago</span>
+                </div>
+            </div>
+            <div class="notification-item">
+                <img src="/page-facebook/images/user.png" alt="User" class="notification-profile-pic">
+                <div class="notification-info">
+                    <p>Your page "O'Clock" has 2 new followers.</p>
+                    <span class="notification-time">3 days ago</span>
+                </div>
+            </div>
+        </div>
+        <div class="overlay-footer">
+            <a href="#">See All Notifications</a>
+        </div>
+    </div>
+
+    <div id="menu-overlay" class="header-overlay large-overlay">
+        <div class="overlay-header">
+            <h3>Menu</h3>
+        </div>
+        <div class="overlay-content menu-grid">
+            <div class="menu-left-panel">
+                <div class="menu-search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Search Menu">
+                </div>
+                <div class="menu-item-group">
+                    <h4>Social</h4>
+                    <a href="#" class="menu-item"><i class="fa-solid fa-user-friends"></i> Friends</a>
+                    <a href="/page-facebook/groups.html" class="menu-item"><i class="fa-solid fa-users"></i> Groups</a>
+                    <a href="/page-facebook/marketplace.html" class="menu-item"><i class="fa-solid fa-store"></i> Marketplace</a>
+                    <a href="/page-facebook/watch.html" class="menu-item"><i class="fa-solid fa-tv"></i> Watch</a>
+                    <a href="#" class="menu-item"><i class="fa-solid fa-calendar-alt"></i> Events</a>
+                    <a href="#" class="menu-item"><i class="fa-solid fa-bookmark"></i> Saved</a>
+                    <a href="#" class="menu-item"><i class="fa-solid fa-flag"></i> Pages</a>
+                    <a href="#" class="menu-item"><i class="fa-solid fa-briefcase"></i> Jobs</a>
+                </div>
+                <div class="menu-item-group">
+                    <h4>Entertainment</h4>
+                    <a href="/page-facebook/gaming.html" class="menu-item"><i class="fa-solid fa-gamepad"></i> Gaming Video</a>
+                    <a href="#" class="menu-item"><i class="fa-solid fa-compact-disc"></i> Play Games</a>
+                    <a href="#" class="menu-item"><i class="fa-solid fa-photo-video"></i> Videos</a>
+                    <a href="#" class="menu-item"><i class="fa-solid fa-podcast"></i> Podcasts</a>
+                </div>
+                <div class="menu-item-group">
+                    <h4>Shopping</h4>
+                    <a href="#" class="menu-item"><i class="fa-solid fa-shopping-cart"></i> Orders & Payments</a>
+                </div>
+                <div class="menu-item-group">
+                    <h4>Personal</h4>
+                    <a href="#" class="menu-item"><i class="fa-solid fa-clock-rotate-left"></i> Memories</a>
+                    <a href="#" class="menu-item"><i class="fa-solid fa-calendar-check"></i> Events</a>
+                </div>
+                <div class="menu-item-group">
+                    <h4>Professional</h4>
+                    <a href="#" class="menu-item"><i class="fa-solid fa-briefcase"></i> Jobs</a>
+                    <a href="#" class="menu-item"><i class="fa-solid fa-chart-line"></i> Ads Manager</a>
+                </div>
+                <div class="menu-item-group">
+                    <h4>Community Resources</h4>
+                    <a href="#" class="menu-item"><i class="fa-solid fa-handshake"></i> Fundraisers</a>
+                    <a href="#" class="menu-item"><i class="fa-solid fa-briefcase-medical"></i> Blood Donations</a>
+                </div>
+            </div>
+            <div class="menu-right-panel">
+                <div class="menu-create-section card">
+                    <h4>Create</h4>
+                    <a href="#" class="create-item"><i class="fa-solid fa-plus-circle"></i> Post</a>
+                    <a href="#" class="create-item"><i class="fa-solid fa-book-open"></i> Story</a>
+                    <a href="#" class="create-item"><i class="fa-solid fa-video"></i> Room</a>
+                    <a href="#" class="create-item"><i class="fa-solid fa-flag"></i> Page</a>
+                    <a href="#" class="create-item"><i class="fa-solid fa-ad"></i> Ad</a>
+                    <a href="/page-facebook/groups.html" class="create-item"><i class="fa-solid fa-users"></i> Group</a>
+                    <a href="#" class="create-item"><i class="fa-solid fa-calendar-check"></i> Event</a>
+                    <a href="/page-facebook/marketplace.html" class="create-item"><i class="fa-solid fa-store-alt"></i> Marketplace Listing</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="user-menu-overlay" class="header-overlay">
+        <div class="overlay-content">
+            <div class="user-menu-header">
+                <img src="/page-facebook/images/brand.jpg" alt="User Profile">
+                <div>
+                    <span>O'oclock</span>
+                    <a href="/page-facebook/profile.html">See your profile</a>
+                </div>
+            </div>
+            <div class="user-menu-separator"></div>
+            <a href="#" class="user-menu-item">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings & Privacy</span>
+            </a>
+            <a href="#" class="user-menu-item">
+                <i class="fa-solid fa-question-circle"></i>
+                <span>Help & Support</span>
+            </a>
+            <a href="#" class="user-menu-item">
+                <i class="fa-solid fa-moon"></i>
+                <span>Display & Accessibility</span>
+            </a>
+            <a href="#" class="user-menu-item">
+                <i class="fa-solid fa-comment-dots"></i>
+                <span>Give Feedback</span>
+            </a>
+            <div class="user-menu-separator"></div>
+            <a href="#" class="user-menu-item">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Log Out</span>
+            </a>
+        </div>
+    </div>
+
+    <main class="profile-main-content">
+        <div class="profile-cover-section">
+            <div class="cover-photo-container">
+                <img src="/page-facebook/images/bg.jpg" alt="Cover Photo" class="cover-photo">
+            </div>
+            <div class="profile-header-details">
+                <div class="profile-info">
+                    <div class="profile-picture-container">
+                        <img src="/page-facebook/images/brand.jpg" alt="Profile Picture" class="profile-picture">
+                        <div class="profile-pic-camera-icon"><i class="fa-solid fa-camera"></i></div>
+                    </div>
+                    <div class="profile-text-info">
+                        <h1 class="profile-name">O'Clock Store</h1> 
+                        <div class="profile-friends-count">10.5K followers</div>
+                        <div class="friends-avatars">
+                            <img src="/page-facebook/images/user.png" alt="Friend 1">
+                            <img src="/page-facebook/images/user.png" alt="Friend 2">
+                            <img src="/page-facebook/images/user.png" alt="Friend 3">
+                            <img src="/page-facebook/images/user.png" alt="Friend 4">
+                            <img src="/page-facebook/images/user.png" alt="Friend 5">
+                        </div>
+                    </div>
+                </div>
+                <div class="profile-actions">
+                    <button class="profile-button"><i class="fa-solid fa-plus"></i> Add to Story</button>
+                    <button class="profile-button more-options"><i class="fa-solid fa-ellipsis-h"></i> More</button>
+                </div>
+            </div>
+            <style>
+                .profile-nav {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 10px 20px;
+                    background-color: #fff;
+                    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+                }
+                .profile-nav-left {
+                    display: flex;
+                    gap: 15px;
+                }
+                .profile-nav-item {
+                    text-decoration: none;
+                    color: #1877F2;
+                    font-weight: 500;
+                    padding: 10px 15px;
+                    border-radius: 5px;
+                }
+                .profile-nav-item.active {
+                    background-color: #e7f3ff;
+                   
+                }
+                .profile-nav-item:hover {
+                    background-color: #f0f2f5;
+                    color: #1877F2;
+                 transform: auto;   
+                 transform: translateY(0px) translateX(0px);
+                }
+            </style>
+            <nav class="profile-nav">
+                <div class="profile-nav-left">
+                    <a href="#" class="profile-nav-item active">Posts</a>
+                    <a href="#" class="profile-nav-item">About</a>
+                    <a href="#" class="profile-nav-item">Friends</a>
+                    <a href="#" class="profile-nav-item">Photos</a>
+                    <a href="/page-facebook/watch.html" class="profile-nav-item">Videos</a>
+                    <a href="#" class="profile-nav-item">Mentions</a>
+                    <a href="#" class="profile-nav-item">Check-ins</a>
+                    <a href="#" class="profile-nav-item">More <i class="fa-solid fa-caret-down"></i></a>
+                </div>
+                <div class="profile-nav-right">
+                    <button class="profile-button add-story"><i class="fa-solid fa-plus"></i> Add Story</button>
+                    <button class="profile-button more-options"><i class="fa-solid fa-ellipsis-h"></i></button>
+                </div>
+            </nav>
+        </div>
+
+        <div class="profile-content">
+            <div class="profile-left-column">
+                <div class="profile-intro-section card">
+                    <h3>Intro</h3>
+                    <div class="intro-item"><i class="fa-solid fa-briefcase"></i> Sells Watches</div>
+                    <div class="intro-item"><i class="fa-solid fa-map-marker-alt"></i> Based in New York</div>
+                    <div class="intro-item"><i class="fa-solid fa-heart"></i> Followed by 10.5K people</div>
+                    <button class="intro-action-button">Edit Details</button>
+                    <button class="intro-action-button">Add Hobbies</button>
+                    <button class="intro-action-button">Add Featured</button>
+                </div>
+
+                <div class="profile-photos-section card">
+                    <div class="card-header">
+                        <h3>Photos</h3>
+                        <a href="#">See All Photos</a>
+                    </div>
+                    <div class="photos-grid">
+                        <img src="/page-facebook/images/store 1.jpg" alt="Photo 1">
+                        <img src="/page-facebook/images/store2.jpg" alt="Photo 2">
+                        <img src="/page-facebook/images/store3.jpg" alt="Photo 3">
+                        <img src="/page-facebook/images/store 4.jpg" alt="Photo 4">
+                        <img src="/page-facebook/images/store 5.jpg" alt="Photo 5">
+                        <img src="/page-facebook/images/store 6.jpg" alt="Photo 6">
+                        <img src="/page-facebook/images/store 7.jpg" alt="Photo 7">
+                        <img src="/page-facebook/images/store 8.jpg" alt="Photo 8">
+                        <img src="/page-facebook/images/audemars p 11.avif" alt="Photo 9">
+                    </div>
+                </div>
+
+                <div class="profile-friends-section card">
+                    <div class="card-header">
+                        <h3>Friends</h3>
+                        <a href="#">See All Friends</a>
+                    </div>
+                    <div class="friends-grid">
+                        <div class="friend-card">
+                            <img src="/page-facebook/images/user.png" alt="Friend 1">
+                            <span>John Doe</span>
+                        </div>
+                        <div class="friend-card">
+                            <img src="/page-facebook/images/user.png" alt="Friend 2">
+                            <span>Jane Smith</span>
+                        </div>
+                        <div class="friend-card">
+                            <img src="/page-facebook/images/user.png" alt="Friend 3">
+                            <span>Michael Johnson</span>
+                        </div>
+                        <div class="friend-card">
+                            <img src="/page-facebook/images/user.png" alt="Friend 4">
+                            <span>Emily Davis</span>
+                        </div>
+                        <div class="friend-card">
+                            <img src="/page-facebook/images/user.png" alt="Friend 5">
+                            <span>Chris Brown</span>
+                        </div>
+                        <div class="friend-card">
+                            <img src="/page-facebook/images/user.png" alt="Friend 6">
+                            <span>Anna Wilson</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        <div class="profile-right-column">
+    <div class="create-post-section card">
+        <div class="post-input-container">
+            <img style="  width: 50px; height: 50px; border-radius: 50%;" src="images/brand.jpg" alt="User Profile" class="post-profile-pic">
+            <input type="text" placeholder="What's on your mind, O'oclock?" class="holder-text1">
+     
+        </div>
+        <div class="post-options">
+            <button><i class="fa-solid fa-video" style="color: #f02849;"></i> Live Video</button>
+            <button><i class="fa-solid fa-image" style="color: #45bd62;"></i> Photo/Video</button>
+            <button><i class="fa-solid fa-face-laugh" style="color: #f7b928;"></i> Feeling/Activity</button>
+        </div>
+        
+    </div>
+
+    <div id="profile-posts-container">
+        <div class="post-card card">
+            <div class="post-header">
+                <img style="  width: 50px; height: 50px; border-radius: 50%;" src="images/brand.jpg" alt="User Profile" class="post-author-pic">
+                <div class="post-info">
+                    <span class="post-author-name">O'Clock Store</span>
+                    <span class="post-time">2 hours ago <i class="fa-solid fa-earth-americas"></i></span>
+                </div>
+                <div class="post-actions-menu">
+                    <i class="fa-solid fa-ellipsis-h"></i>
+                </div>
+            </div>
+            <div class="post-content">
+                <p>Check out our latest collection of watches! Absolutely stunning designs. ✨</p>
+                <img src="images/store 7.jpg" alt="Post Image" class="post-image">
+            </div>
+            <div class="post-reactions">
+                <div class="reaction-summary">
+                    <span class="reaction-icons">
+                        <i class="fa-solid fa-thumbs-up" style="color: #1877F2;"></i>
+                        <i class="fa-solid fa-heart" style="color: #F02849;"></i>
+                    </span>
+                    <span class="reaction-count">You, Ali and 25 others</span>
+                </div>
+                <div class="post-stats">
+                    <span class="comments-count">10 Comments</span>
+                    <span class="shares-count">3 Shares</span>
+                </div>
+            </div>
+            <style>
+                .post-footer {
+                    display: flex;
+                    justify-content: space-between;
+                    padding: 10px 0;
+                }
+                .post-action-button {
+                    background-color: transparent;
+                    border: none;
+                    color: #606770;
+                    font-size: 14px;
+                    cursor: pointer;
+                    display: flex;
+                    align-items: center;
+                }
+                .post-action-button i {
+                    margin-right: 5px;
+                }
+                .post-action-button:hover {
+                    color: #1877F2;
+                }
+            </style>
+            <div class="post-footer">
+                <button class="post-action-button"><i class="fa-regular fa-thumbs-up"></i> Like</button>
+                <button class="post-action-button"><i class="fa-regular fa-comment"></i> Comment</button>
+                <button class="post-action-button"><i class="fa-regular fa-share-from-square"></i> Share</button>
+            </div>
+        </div>
+
+        <div class="post-card card">
+            <div class="post-header">
+                <img style="  width: 50px; height: 50px; border-radius: 50%;" src="images/brand.jpg" alt="User Profile" class="post-author-pic">
+                <div class="post-info">
+                    <span class="post-author-name">O'Clock Store</span>
+                    <span class="post-time">4 hours ago <i class="fa-solid fa-earth-americas"></i></span>
+                </div>
+                <div class="post-actions-menu">
+                    <i class="fa-solid fa-ellipsis-h"></i>
+                </div>
+            </div>
+            <div class="post-content">
+                <p>Exciting news! We're preparing something special for our loyal customers. Stay tuned for updates! 🚀</p>
+            </div>
+            <div class="post-reactions">
+                <div class="reaction-summary">
+                    <span class="reaction-icons">
+                        <i class="fa-solid fa-thumbs-up" style="color: #1877F2;"></i>
+                    </span>
+                    <span class="reaction-count">50 Reactions</span>
+                </div>
+                <div class="post-stats">
+                    <span class="comments-count">5 Comments</span>
+                    <span class="shares-count">1 Share</span>
+                </div>
+            </div>
+            <div class="post-footer">
+                <button class="post-action-button"><i class="fa-regular fa-thumbs-up"></i> Like</button>
+                <button class="post-action-button"><i class="fa-regular fa-comment"></i> Comment</button>
+                <button class="post-action-button"><i class="fa-regular fa-share-from-square"></i> Share</button>
+            </div>
+        </div>
+
+        <div class="post-card card">
+            <div class="post-header">
+                <img style="  width: 50px; height: 50px; border-radius: 50%;" src="images/brand.jpg" alt="User Profile" class="post-author-pic">
+                <div class="post-info">
+                    <span class="post-author-name">O'Clock Store</span>
+                    <span class="post-time">Yesterday at 3:00 PM <i class="fa-solid fa-earth-americas"></i></span>
+                </div>
+                <div class="post-actions-menu">
+                    <i class="fa-solid fa-ellipsis-h"></i>
+                </div>
+            </div>
+            <div class="post-content">
+                <p>Which style do you prefer? Classic elegance or modern simplicity? Let us know in the comments!</p>
+                <div class="post-image-grid two-images">
+                    <img src="images/solar watches.jpg" alt="Post Image 2" class="post-image">
+                    <img src="images/GMT watches.jpg" alt="Post Image 3" class="post-image">
+                </div>
+            </div>
+            <div class="post-reactions">
+                <div class="reaction-summary">
+                    <span class="reaction-icons">
+                        <i class="fa-solid fa-thumbs-up" style="color: #1877F2;"></i>
+                        <i class="fa-solid fa-face-laugh" style="color: #F7B928;"></i>
+                    </span>
+                    <span class="reaction-count">120 Reactions</span>
+                </div>
+                <div class="post-stats">
+                    <span class="comments-count">20 Comments</span>
+                    <span class="shares-count">5 Shares</span>
+                </div>
+            </div>
+            <div class="post-footer">
+                <button class="post-action-button"><i class="fa-regular fa-thumbs-up"></i> Like</button>
+                <button class="post-action-button"><i class="fa-regular fa-comment"></i> Comment</button>
+                <button class="post-action-button"><i class="fa-regular fa-share-from-square"></i> Share</button>
+            </div>
+        </div>
+
+        <div class="post-card card">
+            <div class="post-header">
+                <img style="  width: 50px; height: 50px; border-radius: 50%;" src="images/brand.jpg" alt="User Profile" class="post-author-pic">
+                <div class="post-info">
+                    <span class="post-author-name">O'Clock Store</span>
+                    <span class="post-time">Yesterday at 10:00 AM <i class="fa-solid fa-earth-americas"></i></span>
+                </div>
+                <div class="post-actions-menu">
+                    <i class="fa-solid fa-ellipsis-h"></i>
+                </div>
+            </div>
+            <div class="post-content">
+                <p>Mark your calendars! Our exclusive spring collection is launching next week. Get ready for new timeless pieces! 📅</p>
+                <img src="images/chronograph watches.jpg" alt="New Collection" class="post-image">
+            </div>
+            <div class="post-reactions">
+                <div class="reaction-summary">
+                    <span class="reaction-icons">
+                        <i class="fa-solid fa-thumbs-up" style="color: #1877F2;"></i>
+                        <i class="fa-solid fa-surprise" style="color: #FFC300;"></i>
+                    </span>
+                    <span class="reaction-count">80 Reactions</span>
+                </div>
+                <div class="post-stats">
+                    <span class="comments-count">15 Comments</span>
+                    <span class="shares-count">8 Shares</span>
+                </div>
+            </div>
+            <div class="post-footer">
+                <button class="post-action-button"><i class="fa-regular fa-thumbs-up"></i> Like</button>
+                <button class="post-action-button"><i class="fa-regular fa-comment"></i> Comment</button>
+                <button class="post-action-button"><i class="fa-regular fa-share-from-square"></i> Share</button>
+            </div>
+        </div>
+
+        <div class="post-card card">
+            <div class="post-header">
+                <img src="images/diver watches.jpg" alt="User Profile" class="post-author-pic">
+                <div class="post-info">
+                    <span class="post-author-name">O'Clock Store</span>
+                    <span class="post-time">3 days ago <i class="fa-solid fa-earth-americas"></i></span>
+                </div>
+                <div class="post-actions-menu">
+                    <i class="fa-solid fa-ellipsis-h"></i>
+                </div>
+            </div>
+            <div class="post-content">
+                <p>"Time is what we want most, but what we use worst." – William Penn. Make every moment count! ⏳</p>
+            </div>
+            <div class="post-reactions">
+                <div class="reaction-summary">
+                    <span class="reaction-icons">
+                        <i class="fa-solid fa-heart" style="color: #F02849;"></i>
+                    </span>
+                    <span class="reaction-count">60 Reactions</span>
+                </div>
+                <div class="post-stats">
+                    <span class="comments-count">7 Comments</span>
+                    <span class="shares-count">10 Shares</span>
+                </div>
+            </div>
+            <div class="post-footer">
+                <button class="post-action-button"><i class="fa-regular fa-thumbs-up"></i> Like</button>
+                <button class="post-action-button"><i class="fa-regular fa-comment"></i> Comment</button>
+                <button class="post-action-button"><i class="fa-regular fa-share-from-square"></i> Share</button>
+            </div>
+        </div>
+
+<style>
+   
+</style>
+
+
+        <div class="post-card-card">
+            <div class="post-header">
+                <img src="./page-facebook/images/brand.jpg" alt="User Profile" class="post-author-pic">
+                <div class="post-info">
+                    <span class="post-author-name">O'Clock Store</span>
+                    <span class="post-time">4 days ago <i class="fa-solid fa-earth-americas"></i></span>
+                </div>
+                <div class="post-actions-menu">
+                    <i class="fa-solid fa-ellipsis-h"></i>
+                </div>
+            </div>
+            <div class="post-content">
+                <p>Our amazing customer Sarah rocking her new O'Clock timepiece! Thanks for sharing, Sarah! 😍</p>
+                <img src="images//dress watches.jpg" alt="Customer Showcase" class="post-image">
+            </div>
+            <div class="post-reactions">
+                <div class="reaction-summary">
+                    <span class="reaction-icons">
+                        <i class="fa-solid fa-thumbs-up" style="color: #1877F2;"></i>
+                        <i class="fa-solid fa-heart" style="color: #F02849;"></i>
+                        <i class="fa-solid fa-face-smile" style="color: #F7B928;"></i>
+                    </span>
+                    <span class="reaction-count">150 Reactions</span>
+                </div>
+                <div class="post-stats">
+                    <span class="comments-count">30 Comments</span>
+                    <span class="shares-count">12 Shares</span>
+                </div>
+            </div>
+            <div class="post-footer">
+                <button class="post-action-button"><i class="fa-regular fa-thumbs-up"></i> Like</button>
+                <button class="post-action-button"><i class="fa-regular fa-comment"></i> Comment</button>
+                <button class="post-action-button"><i class="fa-regular fa-share-from-square"></i> Share</button>
+            </div>
+        </div>
+    </div>
+</div>
+    </main>
+
+   
+</body>
+</html>

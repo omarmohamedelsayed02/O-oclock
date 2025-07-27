@@ -1,0 +1,445 @@
+/* marketplace.css */
+
+:root {
+    /* Define your color variables here if they are not in global.css */
+    --primary-bg: #f0f2f5; /* Light grey for background */
+    --card-background: #ffffff; /* White for cards */
+    --text-color: #050505; /* Dark grey for general text */
+    --secondary-text: #65676b; /* Lighter grey for secondary text */
+    --facebook-blue: #1877f2; /* Facebook blue */
+    --facebook-blue-light: #e7f3ff; /* Light blue for active states */
+    --facebook-gray: #f0f2f5; /* Light gray for subtle backgrounds */
+    --facebook-gray-bg: #e4e6eb; /* A bit darker gray for some backgrounds */
+    --facebook-light-gray: #f0f2f5; /* Another light gray variant */
+    --facebook-border-color: #dadde1; /* Border color */
+    --icon-color: #65676b; /* Icon color */
+    --border-color: #dadde1; /* General border color */
+    --shadow-small: 0 1px 2px rgba(0, 0, 0, 0.1);
+    --border-radius-medium: 8px;
+    --border-radius-pill: 50px;
+    --unread-notification: #e7f3ff; /* Color for unread notifications background */
+    --header-height: 56px; /* Height of the fixed header */
+}
+
+
+.marketplace-page-container {
+    display: flex;
+    padding-top: var(--header-height); /* Space for fixed header */
+    background-color: var(--facebook-gray-bg); /* Background for the whole page */
+    min-height: 100vh; /* Ensure it takes full viewport height */
+    overflow: hidden; /* Prevent body scroll if content is long */
+}
+
+/* Marketplace Sidebar */
+.marketplace-sidebar {
+    flex: 0 0 320px; /* Fixed width sidebar */
+    background-color: var(--card-background);
+    border-right: 1px solid var(--border-color);
+    padding: 15px;
+    overflow-y: auto; /* Allow scrolling for sidebar content */
+    scrollbar-width: none; /* Hide scrollbar for Firefox */
+    -ms-overflow-style: none; /* Hide scrollbar for IE/Edge */
+    position: sticky; /* Make sidebar sticky */
+    top: var(--header-height); /* Stick it below the header */
+    height: calc(100vh - var(--header-height)); /* Make it fill remaining height */
+    box-shadow: 1px 0 2px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+}
+
+.marketplace-sidebar::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Webkit browsers */
+}
+
+.marketplace-sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.marketplace-sidebar-header h2 {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text-color);
+}
+
+.marketplace-sidebar-header .settings-icon {
+    width: 36px;
+    height: 36px;
+    background-color: var(--facebook-gray);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    color: var(--secondary-text);
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+.marketplace-sidebar-header .settings-icon:hover {
+    background-color: #d8dadf; /* Lighter grey on hover */
+}
+
+.marketplace-sidebar {
+    /* ... التنسيقات الأخرى ... */
+    position: sticky; /* هذه الخاصية تجعل العنصر ثابتًا عند التمرير */
+    top: var(--header-height); /* تجعله يلتصق أسفل الهيدر (المحدد بارتفاعه في متغير) */
+    height: calc(100vh - var(--header-height)); /* تجعله يملأ الارتفاع المتبقي من الشاشة */
+    overflow-y: auto; /* تسمح بالتمرير داخل القائمة الجانبية إذا كان محتواها كبيرًا */
+    scrollbar-width: none; /* لإخفاء شريط التمرير في فايرفوكس */
+    -ms-overflow-style: none; /* لإخفاء شريط التمرير في IE/Edge */
+}
+
+.marketplace-sidebar::-webkit-scrollbar {
+    display: none; /* لإخفاء شريط التمرير في متصفحات كروم/سفاري */
+}
+
+.marketplace-sidebar .create-listing-btn {
+    width: 100%;
+    background-color: var(--facebook-blue);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 15px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 15px;
+    transition: background-color 0.2s ease;
+}
+
+.marketplace-sidebar .create-listing-btn:hover {
+    background-color: #2e69ee; /* Slightly darker blue on hover */
+}
+
+.marketplace-sidebar .search-box {
+    width: 100%;
+    margin-bottom: 20px;
+    display: flex; /* Make search box flex to align icon and input */
+    align-items: center;
+    background-color: var(--facebook-gray-bg); /* Use a lighter gray for search input background */
+    border-radius: var(--border-radius-pill);
+    padding: 8px 12px;
+}
+
+.marketplace-sidebar .search-box i {
+    color: var(--secondary-text); /* Icon color */
+    margin-right: 8px;
+}
+
+.marketplace-sidebar .search-box input {
+    border: none;
+    background: transparent;
+    outline: none;
+    width: 100%;
+    font-size: 15px;
+    color: var(--text-color);
+}
+
+
+.marketplace-sidebar-nav {
+    list-style: none; /* Remove default list style if it's a ul */
+    padding: 0;
+    margin: 0;
+}
+
+.marketplace-sidebar-nav-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+    margin-bottom: 5px;
+}
+
+.marketplace-sidebar-nav-item:hover {
+    background-color: var(--facebook-gray);
+}
+
+.marketplace-sidebar-nav-item.active {
+    background-color: var(--unread-notification); /* Use defined variable for active state */
+    color: var(--facebook-blue);
+    font-weight: 600; /* Make active item text bolder */
+}
+
+.nav-icon-circle {
+    width: 36px;
+    height: 36px;
+    background-color: var(--facebook-gray);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    color: var(--text-color);
+}
+
+.marketplace-sidebar-nav-item.active .nav-icon-circle {
+    background-color: var(--facebook-blue);
+    color: #fff;
+}
+
+.marketplace-sidebar-section {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+}
+
+.marketplace-sidebar-section h4 {
+    font-size: 17px;
+    color: var(--secondary-text);
+    margin-bottom: 15px;
+}
+
+.location-filter {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    font-size: 15px;
+    color: var(--text-color);
+}
+.location-filter input,
+.location-filter select { /* Apply styles to both input and select */
+    border: none;
+    background-color: var(--facebook-gray);
+    border-radius: 6px;
+    padding: 8px 10px;
+    font-size: 15px;
+    color: var(--text-color);
+    outline: none;
+    flex-grow: 1; /* Allow them to grow within the flex container */
+}
+.location-filter input {
+    width: 100px; /* Specific width for location input */
+    flex-grow: 0; /* Don't let it grow infinitely */
+}
+.location-filter i { /* Icon for the slider in location filter */
+    color: var(--secondary-text);
+    cursor: pointer;
+    font-size: 16px;
+}
+
+
+/* Main Marketplace Content */
+.marketplace-main-content {
+    flex-grow: 1; /* Takes remaining space */
+    display: flex;
+    flex-direction: column; /* Stack title and grid vertically */
+    padding: 20px;
+    background-color: var(--primary-bg); /* Match overall page background */
+    overflow-y: auto; /* Allow scrolling for content */
+    scrollbar-width: thin;
+    scrollbar-color: var(--secondary-text) var(--primary-bg); /* Use primary-bg for scrollbar track */
+}
+
+.marketplace-main-content::-webkit-scrollbar {
+    width: 8px;
+}
+.marketplace-main-content::-webkit-scrollbar-track {
+    background: var(--primary-bg); /* Match background */
+}
+.marketplace-main-content::-webkit-scrollbar-thumb {
+    background-color: var(--secondary-text);
+    border-radius: 10px;
+    border: 2px solid var(--primary-bg); /* Match background */
+}
+
+.section-title { /* Added a class for the main section title */
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 20px;
+}
+
+.marketplace-grid {
+    display: grid;
+    /* Responsive grid columns: min 250px, takes 1fr of available space */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    align-items: start; /* Align items to the start of their grid cell */
+}
+
+.product-card {
+    background-color: var(--card-background);
+    border-radius: 8px;
+    box-shadow: var(--shadow-small);
+    overflow: hidden;
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--text-color);
+    transition: transform 0.2s ease;
+    display: block; /* Ensures the whole card is clickable */
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+}
+
+.product-image-container {
+    width: 100%;
+    padding-bottom: 100%; /* 1:1 Aspect Ratio */
+    position: relative;
+    overflow: hidden;
+    background-color: #eee; /* Placeholder background */
+}
+
+.product-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.product-details {
+    padding: 15px;
+}
+
+.product-price {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 5px;
+    display: block; /* Ensure it's on its own line */
+}
+
+.product-title {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.3;
+    margin-bottom: 8px;
+    height: 40px; /* Fixed height for two lines of text */
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Limit to 2 lines */
+    -webkit-box-orient: vertical;
+    color: var(--text-color); /* Ensure text color is inherited */
+}
+
+.product-location {
+    font-size: 13px;
+    color: var(--secondary-text);
+}
+
+/* Responsive for Marketplace Page */
+@media (max-width: 992px) {
+    .marketplace-sidebar {
+        flex: 0 0 280px;
+        padding: 10px;
+    }
+    .marketplace-sidebar-header h2 {
+        font-size: 22px;
+    }
+    .marketplace-sidebar-nav-item {
+        font-size: 15px;
+        padding: 8px 10px;
+    }
+    .nav-icon-circle {
+        width: 32px;
+        height: 32px;
+        font-size: 16px;
+    }
+    .marketplace-main-content {
+        padding: 15px;
+    }
+    .marketplace-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .marketplace-page-container {
+        flex-direction: column; /* Stack sidebar and main content vertically */
+        padding-top: 56px; /* Adjust for smaller header on mobile if needed, or keep 70px */
+        height: auto; /* Allow content to dictate height */
+        overflow: visible; /* Allow body scroll on mobile */
+    }
+    .marketplace-sidebar {
+        flex: 0 0 auto;
+        width: 100%;
+        position: static; /* No longer sticky on mobile */
+        height: auto; /* Height adapts to content */
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+        padding: 15px 20px;
+        box-shadow: none; /* Remove shadow */
+        overflow-y: visible; /* Allow visible content */
+    }
+    .marketplace-sidebar-header {
+        margin-bottom: 10px;
+    }
+    .marketplace-sidebar .create-listing-btn {
+        margin-bottom: 10px;
+    }
+    .marketplace-sidebar .search-box {
+        margin-bottom: 10px;
+    }
+    .marketplace-sidebar-nav {
+        display: flex;
+        overflow-x: auto; /* Enable horizontal scroll for navigation items */
+        padding-bottom: 10px;
+        white-space: nowrap; /* Prevent items from wrapping */
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+    .marketplace-sidebar-nav::-webkit-scrollbar {
+        display: none;
+    }
+    .marketplace-sidebar-nav-item {
+        flex-shrink: 0; /* Prevent items from shrinking */
+        margin-right: 10px; /* Space between items */
+    }
+    .marketplace-sidebar-section {
+        display: none; /* Hide deeper sidebar sections on smaller screens for simplicity */
+    }
+    .marketplace-main-content {
+        padding: 10px;
+        overflow-y: visible; /* Allow content scroll */
+    }
+    .marketplace-grid {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    }
+    .product-price {
+        font-size: 18px;
+    }
+    .product-title {
+        font-size: 14px;
+        height: 36px;
+    }
+    .product-location {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 576px) {
+    .marketplace-main-content {
+        padding: 5px;
+    }
+    .marketplace-grid {
+        grid-template-columns: repeat(2, 1fr); /* Force 2 columns on very small screens */
+        gap: 10px;
+    }
+    .product-image-container {
+        padding-bottom: 100%; /* Maintain aspect ratio */
+    }
+    .product-price {
+        font-size: 15px;
+    }
+    .product-title {
+        font-size: 12px;
+        height: 30px; /* Adjust height for smaller font */
+    }
+    .product-location {
+        font-size: 11px;
+    }
+}

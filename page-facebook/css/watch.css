@@ -1,0 +1,532 @@
+/* watch.css */
+
+.watch-page-container {
+    display: flex;
+    padding-top: 70px; /* Space for fixed header */
+    height: 100vh;
+    overflow: hidden; /* Prevent scrolling on main container */
+}
+
+/* Watch Sidebar */
+.watch-sidebar {
+    flex: 0 0 320px;
+    background-color: var(--card-background);
+    border-right: 1px solid var(--border-color);
+    padding: 15px;
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+/* css/watch.css */
+
+/* --- Reels Section (Modified for vertical videos) --- */
+.reels-section {
+    width: 100%;
+    max-width: 700px; /* نفس عرض البوستات العادية عشان يكونوا متناسقين */
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* مسافة بين كل ريل والتاني */
+    padding: 0 15px;
+    margin-bottom: 20px;
+}
+
+.reel-card {
+    position: relative;
+    width: 100%;
+    /* للحفاظ على نسبة 9:16 للفيديو العمودي */
+    padding-bottom: 177.77%; /* (9 / 16) * 100 = 56.25 (للأفقي 16:9) -> (16 / 9) * 100 = 177.77 (للعمودي 9:16) */
+    height: 0; /* مهم جدا عشان الـ padding-bottom يشتغل صح كـ aspect ratio holder */
+    background-color: var(--card-background);
+    border-radius: var(--border-radius-medium);
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* تنسيقات عنصر الـ <video> داخل الـ reel-card */
+.reel-card video {
+    position: absolute; /* عشان يملأ الـ reel-card بالكامل */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* مهم جدا عشان الفيديو يملأ المساحة بدون تشويه ويقص الزيادات */
+    border-radius: var(--border-radius-medium); /* عشان ياخد نفس تدور زوايا الكارد */
+}
+
+/* تنسيق الـ overlay عشان يظهر فوق الفيديو */
+.reel-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* تدرج لوني عشان النص يظهر بوضوح */
+    background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 50%, rgba(0,0,0,0.3) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* المحتوى (صورة المستخدم واسمه) يكون في الأسفل */
+    padding: 15px;
+    color: var(--card-background); /* لون النص أبيض */
+    z-index: 1; /* عشان يضمن إنه فوق الفيديو */
+    pointer-events: none; /* عشان نقدر نضغط على الفيديو من خلال الـ overlay */
+}
+
+.reel-user-pic {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 3px solid var(--card-background); /* إطار أبيض لصورة المستخدم */
+    object-fit: cover;
+    margin-bottom: 10px;
+    pointer-events: auto; /* عشان لو عايز تعملها clickable */
+}
+
+.reel-username {
+    font-weight: 600;
+    font-size: 16px;
+    align-self: flex-start;
+    margin-top: 0;
+    pointer-events: auto; /* عشان لو عايز تعملها clickable */
+}
+
+/* لو لسه عايز ايقونة تشغيل إضافية يدوياً، ممكن تفعل ده وتعملها بتشتغل بالـ JS */
+/* .reel-play-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 50px;
+    color: var(--card-background);
+    opacity: 0.9;
+    z-index: 2;
+    pointer-events: none;
+} */
+
+
+/* Create Reel Card (يبقى كما هو) */
+.create-reel-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--card-background);
+    text-align: center;
+    padding: 40px 15px;
+    cursor: pointer;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    border-radius: var(--border-radius-medium);
+    width: 100%;
+    height: auto;
+    min-height: 200px;
+}
+
+.create-reel-card img {
+    display: none;
+}
+
+.create-reel-icon {
+    font-size: 50px;
+    color: var(--facebook-blue);
+    margin-bottom: 10px;
+    background-color: var(--facebook-gray-bg);
+    border-radius: 50%;
+    padding: 10px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.create-reel-text {
+    font-weight: 700;
+    color: var(--text-color);
+    font-size: 16px;
+}
+
+
+/* --- Responsive Design (Updated for vertical video reels) --- */
+@media (max-width: 768px) {
+    .reels-section {
+        padding: 0 10px;
+        gap: 15px;
+    }
+    .reel-card {
+        padding-bottom: 170%; /* نحافظ على نسبة الطول للعرض */
+    }
+    .reel-user-pic {
+        width: 40px;
+        height: 40px;
+    }
+    .reel-username {
+        font-size: 14px;
+    }
+    /* .reel-play-icon { font-size: 40px; } */
+    .create-reel-icon {
+        font-size: 40px;
+    }
+    .create-reel-text {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 500px) {
+    .reels-section {
+        padding: 0 5px;
+        gap: 10px;
+    }
+    .reel-card {
+        padding-bottom: 160%; /* ممكن نعدل النسبة شوية لو حسينا إنها طويلة أوي */
+    }
+    .reel-user-pic {
+        width: 35px;
+        height: 35px;
+        margin-bottom: 5px;
+    }
+    .reel-username {
+        font-size: 13px;
+    }
+    /* .reel-play-icon { font-size: 30px; } */
+    .create-reel-card {
+        padding: 30px 10px;
+        min-height: 150px;
+    }
+    .create-reel-icon {
+        font-size: 35px;
+        margin-bottom: 5px;
+    }
+    .create-reel-text {
+        font-size: 13px;
+    }
+}
+.watch-sidebar::-webkit-scrollbar {
+    display: none;
+}
+
+.watch-sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.watch-sidebar-header h2 {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text-color);
+}
+
+.watch-sidebar-header .settings-icon {
+    width: 36px;
+    height: 36px;
+    background-color: var(--facebook-gray);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    color: var(--secondary-text);
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+.watch-sidebar-header .settings-icon:hover {
+    background-color: #d8dadf;
+}
+
+.watch-sidebar .search-box {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.watch-sidebar-nav-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+    margin-bottom: 5px;
+}
+
+.watch-sidebar-nav-item:hover {
+    background-color: var(--facebook-gray);
+}
+
+.watch-sidebar-nav-item.active {
+    background-color: var(--unread-notification);
+    color: var(--facebook-blue);
+}
+
+.watch-sidebar-nav-item.active .nav-icon-circle {
+    background-color: var(--facebook-blue);
+    color: #fff;
+}
+
+.nav-icon-circle {
+    width: 36px;
+    height: 36px;
+    background-color: var(--facebook-gray);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    color: var(--text-color);
+}
+
+.watch-sidebar-section {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+}
+
+.watch-sidebar-section h4 {
+    font-size: 17px;
+    color: var(--secondary-text);
+    margin-bottom: 15px;
+}
+
+/* Main Video Content */
+.watch-main-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--secondary-text) var(--background-color);
+}
+
+/* Custom Scrollbar for Main Content */
+.watch-main-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.watch-main-content::-webkit-scrollbar-track {
+    background: var(--background-color);
+}
+
+.watch-main-content::-webkit-scrollbar-thumb {
+    background-color: var(--secondary-text);
+    border-radius: 10px;
+    border: 2px solid var(--background-color);
+}
+
+.reels-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.reel-item {
+    position: relative;
+    width: 100%;
+    padding-bottom: 177.77%; /* 9:16 aspect ratio (height / width * 100) for vertical videos */
+    background-color: #000;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.reel-item video, .reel-item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.reel-item .reel-info {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: #fff;
+    z-index: 2;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.6);
+}
+
+.reel-item .reel-author {
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.reel-item .reel-views {
+    font-size: 13px;
+}
+
+.video-posts-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.video-post {
+    background-color: var(--card-background);
+    border-radius: 8px;
+    box-shadow: var(--shadow-small);
+    overflow: hidden;
+    padding-bottom: 15px;
+}
+
+.video-post-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px;
+}
+
+.video-post-header .post-profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.video-post-author {
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--text-color);
+}
+
+.video-post-time {
+    font-size: 13px;
+    color: var(--secondary-text);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.video-player-container {
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    position: relative;
+    background-color: #000;
+}
+
+.video-player-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.video-post-content {
+    padding: 15px;
+}
+
+.video-post-content .post-text {
+    font-size: 15px;
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+/* Reusing post stats and actions from global.css */
+/* Make sure these classes are included in your HTML as well */
+.video-post .post-stats {
+    padding: 10px 15px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.video-post .post-actions {
+    padding-top: 10px;
+    padding: 0 10px;
+}
+
+/* Responsive for Watch Page */
+@media (max-width: 992px) {
+    .watch-sidebar {
+        flex: 0 0 280px;
+        padding: 10px;
+    }
+    .watch-sidebar-header h2 {
+        font-size: 22px;
+    }
+    .watch-sidebar-nav-item {
+        font-size: 15px;
+        padding: 8px 10px;
+    }
+    .nav-icon-circle {
+        width: 32px;
+        height: 32px;
+        font-size: 16px;
+    }
+    .watch-main-content {
+        padding: 15px;
+    }
+    .reel-item {
+        padding-bottom: 160%; /* Adjust for slightly shorter reels */
+    }
+    .video-posts-section {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .watch-page-container {
+        flex-direction: column;
+        padding-top: 60px; /* Adjust for smaller header */
+        height: auto; /* Allow content to scroll */
+    }
+    .watch-sidebar {
+        flex: 0 0 auto;
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+        padding: 15px 20px; /* More horizontal padding */
+        overflow-y: visible; /* Allow content to push height */
+    }
+    .watch-sidebar-header {
+        margin-bottom: 10px;
+    }
+    .watch-sidebar .search-box {
+        margin-bottom: 10px;
+    }
+    .watch-sidebar-nav {
+        display: flex;
+        overflow-x: auto; /* Allow horizontal scroll for nav items */
+        padding-bottom: 10px;
+        white-space: nowrap; /* Prevent wrapping */
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+    .watch-sidebar-nav::-webkit-scrollbar {
+        display: none;
+    }
+    .watch-sidebar-nav-item {
+        flex-shrink: 0;
+        margin-right: 10px; /* Space between items */
+    }
+    .watch-sidebar-section {
+        display: none; /* Hide deeper sidebar sections on mobile */
+    }
+    .watch-main-content {
+        padding: 10px;
+    }
+    .reels-section {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 10px;
+    }
+    .reel-item {
+        padding-bottom: 150%;
+    }
+    .video-posts-section {
+        grid-template-columns: 1fr; /* Single column on small screens */
+    }
+}
+
+@media (max-width: 576px) {
+    .watch-main-content {
+        padding: 5px;
+    }
+    .reels-section {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    }
+    .reel-item {
+        padding-bottom: 140%;
+    }
+}

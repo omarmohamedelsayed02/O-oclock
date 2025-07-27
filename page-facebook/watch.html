@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook - Watch</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/watch.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="header-section left">
+            <a href="/page-facebook/index.html" class="facebook-logo">
+                <img src="/page-facebook/images/facebook.png" alt="Facebook" class="logo">
+            </a>
+            <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" placeholder="Search Facebook" id="main-search-input">
+                <div id="search-history-overlay" class="header-overlay search-history-overlay">
+                    <div class="overlay-header">
+                        <h3>Recent Searches</h3>
+                        <a href="#" class="clear-all-search">Clear All</a>
+                    </div>
+                    <div class="overlay-content search-history-list">
+                        </div>
+                </div>
+            </div>
+        </div>
+        <nav class="header-section middle">
+            <a href="/page-facebook/index.html" class="nav-icon" title="Home"><i class="fa-solid fa-house"></i></a>
+            <a href="/page-facebook/watch.html" class="nav-icon active" title="Watch"><i class="fa-solid fa-tv"></i></a>
+            <a href="/page-facebook/marketplace.html" class="nav-icon" title="Marketplace"><i class="fa-solid fa-store"></i></a>
+            <a href="/page-facebook/groups.html" class="nav-icon" title="Groups"><i class="fa-solid fa-users"></i></a>
+            <a href="/page-facebook/gaming.html" class="nav-icon" title="Gaming"><i class="fa-solid fa-gamepad"></i></a>
+        </nav>
+        <div class="header-section right">
+            <a href="/page-facebook/profile.html" class="user-profile-icon" title="Profile">
+                <img src="/page-facebook/images/brand.jpg" alt="User Profile">
+            </a>
+            <a href="#" class="header-button" title="Create"><i class="fa-solid fa-plus"></i></a>
+            <a href="#" class="header-button" title="Messenger"><i class="fa-brands fa-facebook-messenger"></i></a>
+            <a href="#" class="header-button" title="Notifications"><i class="fa-solid fa-bell"></i></a>
+            <a href="#" class="header-button" title="Menu"><i class="fa-solid fa-bars"></i></a>
+        </div>
+    </header>
+
+    <div id="messenger-overlay" class="header-overlay">
+        <div class="overlay-header">
+            <h3>Chats</h3>
+            <div class="overlay-actions">
+                <i class="fa-solid fa-ellipsis-h"></i>
+                <i class="fa-solid fa-expand"></i>
+                <i class="fa-solid fa-video"></i>
+                <i class="fa-solid fa-pen-to-square"></i>
+            </div>
+        </div>
+        <div class="overlay-search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="Search Messenger">
+        </div>
+        <div class="overlay-content">
+            <div class="chat-item">
+                <img src="/page-facebook/images/user.png" alt="User" class="chat-profile-pic">
+                <div class="chat-info">
+                    <div class="chat-name">Ahmed H.</div>
+                    <div class="last-message">You: Looks good! <span class="chat-time">5m</span></div>
+                </div>
+            </div>
+            <div class="chat-item">
+                <img src="/page-facebook/images/user.png" alt="User" class="chat-profile-pic">
+                <div class="chat-info">
+                    <div class="chat-name">Sara J.</div>
+                    <div class="last-message">Okay, see you soon! <span class="chat-time">2h</span></div>
+                </div>
+            </div>
+            <div class="chat-item">
+                <img src="/page-facebook/images/user.png" alt="User" class="chat-profile-pic">
+                <div class="chat-info">
+                    <div class="chat-name">Family Group</div>
+                    <div class="last-message">Everyone: Happy Birthday! <span class="chat-time">Yesterday</span></div>
+                </div>
+            </div>
+            <div class="chat-item">
+                <img src="/page-facebook/images/user.png" alt="User" class="chat-profile-pic">
+                <div class="chat-info">
+                    <div class="chat-name">New Client</div>
+                    <div class="last-message">Thanks for the update. <span class="chat-time">Jul 19</span></div>
+                </div>
+            </div>
+            <div class="chat-item">
+                <img src="/page-facebook/images/user.png" alt="User" class="chat-profile-pic">
+                <div class="chat-info">
+                    <div class="chat-name">Team Project</div>
+                    <div class="last-message">Let's discuss this tomorrow. <span class="chat-time">Jul 18</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="overlay-footer">
+            <a href="#">See All in Messenger</a>
+        </div>
+    </div>
+
+    <div id="notifications-overlay" class="header-overlay">
+        <div class="overlay-header">
+            <h3>Notifications</h3>
+            <div class="overlay-actions">
+                <i class="fa-solid fa-ellipsis-h"></i>
+            </div>
+        </div>
+        <div class="overlay-content">
+            <div class="notification-item unread">
+                <img src="/page-facebook/images/user.png" alt="User" class="notification-profile-pic">
+                <div class="notification-info">
+                    <p><strong>Maria S.</strong> reacted to your photo.</p>
+                    <span class="notification-time">1 hour ago</span>
+                </div>
+                <i class="fa-solid fa-circle notification-dot"></i>
+            </div>
+            <div class="notification-item">
+                <img src="/page-facebook/images/user.png" alt="User" class="notification-profile-pic">
+                <div class="notification-info">
+                    <p><strong>Omar D.</strong> commented on your post.</p>
+                    <span class="notification-time">3 hours ago</span>
+                </div>
+            </div>
+            <div class="notification-item unread">
+                <img src="/page-facebook/images/user.png" alt="User" class="notification-profile-pic">
+                <div class="notification-info">
+                    <p><strong>Facebook</strong> updated its privacy policy.</p>
+                    <span class="notification-time">Yesterday</span>
+                </div>
+                <i class="fa-solid fa-circle notification-dot"></i>
+            </div>
+            <div class="notification-item">
+                <img src="/page-facebook/images/user.png" alt="User" class="notification-profile-pic">
+                <div class="notification-info">
+                    <p><strong>Ahmed F.</strong> sent you a friend request.</p>
+                    <span class="notification-time">2 days ago</span>
+                </div>
+            </div>
+            <div class="notification-item">
+                <img src="/page-facebook/images/user.png" alt="User" class="notification-profile-pic">
+                <div class="notification-info">
+                    <p>Your page "O'Clock" has 2 new followers.</p>
+                    <span class="notification-time">3 days ago</span>
+                </div>
+            </div>
+        </div>
+        <div class="overlay-footer">
+            <a href="#">See All Notifications</a>
+        </div>
+    </div>
+
+    <div id="menu-overlay" class="header-overlay large-overlay">
+        <div class="overlay-header">
+            <h3>Menu</h3>
+        </div>
+        <div class="overlay-content menu-grid">
+            <div class="menu-left-panel">
+                <div class="menu-search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Search Menu">
+                </div>
+                <div class="menu-item-group">
+                    <h4>Social</h4>
+                    <a href="#" class="menu-item"><i class="fa-solid fa-user-friends"></i> Friends</a>
+                    <a href="/page-facebook/groups.html" class="menu-item"><i class="fa-solid fa-users"></i> Groups</a>
+                    <a href="/page-facebook/marketplace.html" class="menu-item"><i class="fa-solid fa-store"></i> Marketplace</a>
+                    <a href="/page-facebook/watch.html" class="menu-item"><i class="fa-solid fa-tv"></i> Watch</a>
+                    <a href="#" class="menu-item"><i class="fa-solid fa-calendar-alt"></i> Events</a>
+                    <a href="#" class="menu-item"><i class="fa-solid fa-bookmark"></i> Saved</a>
+                    <a href="#" class="menu-item"><i class="fa-solid fa-flag"></i> Pages</a>
+                    <a href="#" class="menu-item"><i class="fa-solid fa-briefcase"></i> Jobs</a>
+                </div>
+                <div class="menu-item-group">
+                    <h4>Entertainment</h4>
+                    <a href="/page-facebook/gaming.html" class="menu-item"><i class="fa-solid fa-gamepad"></i> Gaming Video</a>
+                    <a href="#" class="menu-item"><i class="fa-solid fa-compact-disc"></i> Play Games</a>
+                    <a href="#" class="menu-item"><i class="fa-solid fa-photo-video"></i> Videos</a>
+                    <a href="#" class="menu-item"><i class="fa-solid fa-podcast"></i> Podcasts</a>
+                </div>
+                <div class="menu-item-group">
+                    <h4>Shopping</h4>
+                    <a href="#" class="menu-item"><i class="fa-solid fa-shopping-cart"></i> Orders & Payments</a>
+                </div>
+                <div class="menu-item-group">
+                    <h4>Personal</h4>
+                    <a href="#" class="menu-item"><i class="fa-solid fa-clock-rotate-left"></i> Memories</a>
+                    <a href="#" class="menu-item"><i class="fa-solid fa-calendar-check"></i> Events</a>
+                </div>
+                <div class="menu-item-group">
+                    <h4>Professional</h4>
+                    <a href="#" class="menu-item"><i class="fa-solid fa-briefcase"></i> Jobs</a>
+                    <a href="#" class="menu-item"><i class="fa-solid fa-chart-line"></i> Ads Manager</a>
+                </div>
+                <div class="menu-item-group">
+                    <h4>Community Resources</h4>
+                    <a href="#" class="menu-item"><i class="fa-solid fa-handshake"></i> Fundraisers</a>
+                    <a href="#" class="menu-item"><i class="fa-solid fa-briefcase-medical"></i> Blood Donations</a>
+                </div>
+            </div>
+            <div class="menu-right-panel">
+                <div class="menu-create-section card">
+                    <h4>Create</h4>
+                    <a href="#" class="create-item"><i class="fa-solid fa-plus-circle"></i> Post</a>
+                    <a href="#" class="create-item"><i class="fa-solid fa-book-open"></i> Story</a>
+                    <a href="#" class="create-item"><i class="fa-solid fa-video"></i> Room</a>
+                    <a href="#" class="create-item"><i class="fa-solid fa-flag"></i> Page</a>
+                    <a href="#" class="create-item"><i class="fa-solid fa-ad"></i> Ad</a>
+                    <a href="/page-facebook/groups.html" class="create-item"><i class="fa-solid fa-users"></i> Group</a>
+                    <a href="#" class="create-item"><i class="fa-solid fa-calendar-check"></i> Event</a>
+                    <a href="/page-facebook/marketplace.html" class="create-item"><i class="fa-solid fa-store-alt"></i> Marketplace Listing</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="user-menu-overlay" class="header-overlay">
+        <div class="overlay-content">
+            <div class="user-menu-header">
+                <img src="/page-facebook/images/brand.jpg" alt="User Profile">
+                <div>
+                    <span>Your Page Name</span>
+                    <a href="/page-facebook/profile.html">See your profile</a>
+                </div>
+            </div>
+            <div class="user-menu-separator"></div>
+            <a href="#" class="user-menu-item">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings & Privacy</span>
+            </a>
+            <a href="#" class="user-menu-item">
+                <i class="fa-solid fa-question-circle"></i>
+                <span>Help & Support</span>
+            </a>
+            <a href="#" class="user-menu-item">
+                <i class="fa-solid fa-moon"></i>
+                <span>Display & Accessibility</span>
+            </a>
+            <a href="#" class="user-menu-item">
+                <i class="fa-solid fa-comment-dots"></i>
+                <span>Give Feedback</span>
+            </a>
+            <div class="user-menu-separator"></div>
+            <a href="#" class="user-menu-item">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Log Out</span>
+            </a>
+        </div>
+    </div>
+
+    <main class="watch-page-container">
+        <aside class="watch-sidebar">
+            <div class="watch-sidebar-header">
+                <h2>Watch</h2>
+                <div class="settings-icon"><i class="fa-solid fa-gear"></i></div>
+            </div>
+            <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" placeholder="Search videos">
+            </div>
+            <nav class="watch-sidebar-nav">
+                <a href="#" class="watch-sidebar-nav-item active">
+                    <div class="nav-icon-circle"><i class="fa-solid fa-house"></i></div>
+                    Home
+                </a>
+                <a href="#" class="watch-sidebar-nav-item">
+                    <div class="nav-icon-circle"><i class="fa-solid fa-fire"></i></div>
+                    Live
+                </a>
+                <a href="#" class="watch-sidebar-nav-item">
+                    <div class="nav-icon-circle"><i class="fa-solid fa-circle-play"></i></div>
+                    Reels
+                </a>
+                <a href="#" class="watch-sidebar-nav-item">
+                    <div class="nav-icon-circle"><i class="fa-solid fa-bookmark"></i></div>
+                    Saved videos
+                </a>
+                <a href="#" class="watch-sidebar-nav-item">
+                    <div class="nav-icon-circle"><i class="fa-solid fa-film"></i></div>
+                    Shows
+                </a>
+                <a href="#" class="watch-sidebar-nav-item">
+                    <div class="nav-icon-circle"><i class="fa-solid fa-video"></i></div>
+                    Your videos
+                </a>
+            </nav>
+            <div class="watch-sidebar-section">
+                <h4>Your Watchlists</h4>
+                </div>
+        </aside>
+
+        <section class="watch-main-content">
+<h3>Reels</h3>
+        <div class="reels-section" id="reels-container">
+            <div class="reel-card">
+                <video controls poster="images/o'clock reel.jpg">
+                    <source src="images/o'oclock-video-reel.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="reel-overlay">
+                    <img src="images/user.png" alt="User" class="reel-user-pic">
+                    <span class="reel-username">O'Clock Store</span>
+                    </div>
+            </div>
+
+            <div class="reel-card">
+                <video controls poster="images/fashon.jpg">
+                    <source src="images/fashion-reel.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="reel-overlay">
+                    <img src="images/user.png" alt="User" class="reel-user-pic">
+                    <span class="reel-username">Fashion Hub</span>
+                </div>
+            </div>
+
+            <div class="reel-card">
+                <video controls poster="images/video1.jpg">
+                    <source src="/page-facebook/images/video 11.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="reel-overlay">
+                    <img src="images/user.png" alt="User" class="reel-user-pic">
+                    <span class="reel-username">PS 4</span>
+                </div>
+            </div>
+
+<div class="reel-card">
+                <video controls poster="images/film.123.jpg">
+                    <source src="/page-facebook/images/video-10 (2).mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="reel-overlay">
+                    <img src="images/user.png" alt="User" class="reel-user-pic">
+                    <span class="reel-username">Film</span>
+                </div>
+            </div>
+
+            <div class="reel-card">
+                <video controls poster="images/the natural.jpg">
+                    <source src="/page-facebook/images/video-10 (3).mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="reel-overlay">
+                    <img src="images/user.png" alt="User" class="reel-user-pic">
+                    <span class="reel-username">The naturl</span>
+                </div>
+            </div>
+
+
+            <div class="reel-card">
+                <video controls poster="images/the camera.jpg">
+                    <source src="/page-facebook/images/video-10 (4).mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="reel-overlay">
+                    <img src="images/user.png" alt="User" class="reel-user-pic">
+                    <span class="reel-username">for camera lovers</span>
+                </div>
+            </div>
+
+
+            <div class="reel-card">
+                <video controls poster="images/video2.jpg">
+                    <source src="/page-facebook/images/videomp4-2.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="reel-overlay">
+                    <img src="images/user.png" alt="User" class="reel-user-pic">
+                    <span class="reel-username">Torment of Games</span>
+                </div>
+            </div>
+
+
+
+            <div class="reel-card">
+                <video controls poster="images//socialmedia.pic">
+                    <source src="/page-facebook/images/videomp4.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="reel-overlay">
+                    <img src="images/user.png" alt="User" class="reel-user-pic">
+                    <span class="reel-username">social media</span>
+                </div>
+            </div>
+
+
+
+            <div class="reel-card create-reel-card">
+                <i class="fa-solid fa-plus-circle create-reel-icon"></i>
+                <span class="create-reel-text">Create reel</span>
+            </div>
+        </div>
+        </section>
+    </main>
+
+</body>
+</html>

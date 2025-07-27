@@ -1,0 +1,318 @@
+/* gaming.css */
+
+.gaming-page-container {
+    display: flex;
+    padding-top: 70px; /* Space for fixed header */
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Gaming Sidebar */
+.gaming-sidebar {
+    flex: 0 0 320px;
+    background-color: var(--card-background);
+    border-right: 1px solid var(--border-color);
+    padding: 15px;
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.gaming-sidebar::-webkit-scrollbar {
+    display: none;
+}
+
+.gaming-sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.gaming-sidebar-header h2 {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text-color);
+}
+
+.gaming-sidebar-header .settings-icon {
+    width: 36px;
+    height: 36px;
+    background-color: var(--facebook-gray);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    color: var(--secondary-text);
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+.gaming-sidebar-header .settings-icon:hover {
+    background-color: #d8dadf;
+}
+
+.gaming-sidebar .search-box {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.gaming-sidebar-nav-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+    margin-bottom: 5px;
+}
+
+.gaming-sidebar-nav-item:hover {
+    background-color: var(--facebook-gray);
+}
+
+.gaming-sidebar-nav-item.active {
+    background-color: var(--unread-notification);
+    color: var(--facebook-blue);
+}
+
+.nav-icon-circle {
+    width: 36px;
+    height: 36px;
+    background-color: var(--facebook-gray);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    color: var(--text-color);
+}
+
+.gaming-sidebar-nav-item.active .nav-icon-circle {
+    background-color: var(--facebook-blue);
+    color: #fff;
+}
+
+.gaming-sidebar-section {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+}
+
+.gaming-sidebar-section h4 {
+    font-size: 17px;
+    color: var(--secondary-text);
+    margin-bottom: 15px;
+}
+
+.gaming-activity-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 0;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+.gaming-activity-item:hover {
+    background-color: var(--facebook-gray);
+    border-radius: 6px;
+}
+.gaming-activity-item .profile-pic {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px; /* Games often have square icons */
+    object-fit: cover;
+}
+.gaming-activity-item span {
+    font-size: 15px;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+/* Main Gaming Content */
+.gaming-main-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--secondary-text) var(--background-color);
+}
+
+.gaming-main-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.gaming-main-content::-webkit-scrollbar-track {
+    background: var(--background-color);
+}
+
+.gaming-main-content::-webkit-scrollbar-thumb {
+    background-color: var(--secondary-text);
+    border-radius: 10px;
+    border: 2px solid var(--background-color);
+}
+
+.game-suggestions-section {
+    margin-bottom: 30px;
+}
+
+.game-suggestions-section h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 15px;
+}
+
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.game-card {
+    background-color: var(--card-background);
+    border-radius: 8px;
+    box-shadow: var(--shadow-small);
+    overflow: hidden;
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--text-color);
+    transition: transform 0.2s ease;
+}
+
+.game-card:hover {
+    transform: translateY(-5px);
+}
+
+.game-cover-image {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+}
+
+.game-card-content {
+    padding: 15px;
+}
+
+.game-card-content h4 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 5px;
+    line-height: 1.3;
+    height: 40px; /* Fixed height for two lines of title */
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.game-card-content .players-count {
+    font-size: 13px;
+    color: var(--secondary-text);
+    margin-bottom: 10px;
+}
+
+.game-card-content .play-button {
+    width: 100%;
+    background-color: var(--facebook-blue);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 15px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.game-card-content .play-button:hover {
+    background-color: #2e69ee;
+}
+
+/* Responsive for Gaming Page */
+@media (max-width: 992px) {
+    .gaming-sidebar {
+        flex: 0 0 280px;
+        padding: 10px;
+    }
+    .gaming-sidebar-header h2 {
+        font-size: 22px;
+    }
+    .gaming-sidebar-nav-item {
+        font-size: 15px;
+        padding: 8px 10px;
+    }
+    .nav-icon-circle {
+        width: 32px;
+        height: 32px;
+        font-size: 16px;
+    }
+    .gaming-main-content {
+        padding: 15px;
+    }
+    .game-grid {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .gaming-page-container {
+        flex-direction: column;
+        padding-top: 60px;
+        height: auto;
+    }
+    .gaming-sidebar {
+        flex: 0 0 auto;
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+        padding: 15px 20px;
+        overflow-y: visible;
+    }
+    .gaming-sidebar-header {
+        margin-bottom: 10px;
+    }
+    .gaming-sidebar .search-box {
+        margin-bottom: 10px;
+    }
+    .gaming-sidebar-nav {
+        display: flex;
+        overflow-x: auto;
+        padding-bottom: 10px;
+        white-space: nowrap;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+    .gaming-sidebar-nav::-webkit-scrollbar {
+        display: none;
+    }
+    .gaming-sidebar-nav-item {
+        flex-shrink: 0;
+        margin-right: 10px;
+    }
+    .gaming-sidebar-section {
+        display: none; /* Hide deeper sidebar sections on mobile */
+    }
+    .gaming-main-content {
+        padding: 10px;
+    }
+    .game-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+}
+
+@media (max-width: 576px) {
+    .gaming-main-content {
+        padding: 5px;
+    }
+    .game-grid {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        gap: 10px;
+    }
+}

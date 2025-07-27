@@ -1,0 +1,145 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <style>
+        * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+        }
+
+        body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: #f2f2f2;
+        }
+
+        .wrapper {
+        width: 420px;
+        background: #ffffff;
+        border: 2px solid rgba(0, 0, 0, 0.1);
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        padding: 30px 40px;
+        color: #333333;
+        }
+
+        .wrapper h1 {
+        font-size: 32px;
+        text-align: center;
+        color: #131921;
+        margin-bottom: 25px;
+        font-weight: 600;
+        }
+
+        .input-box {
+        position: relative;
+        width: 100%;
+        height: 50px;
+        margin: 20px 0;
+        }
+
+        .input-box input {
+        width: 100%;
+        height: 100%;
+        background: #f2f2f2;
+        border: none;
+        outline: none;
+        border-radius: 40px;
+        font-size: 16px;
+        color: #333333;
+        padding: 20px 45px 20px 20px;
+        }
+
+        .input-box i {
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 20px;
+        color: #131921;
+        }
+
+        .wrapper .btn {
+        width: 100%;
+        height: 45px;
+        background: #ff9900;
+        border: none;
+        outline: none;
+        border-radius: 40px;
+        cursor: pointer;
+        font-size: 16px;
+        color: #ffffff;
+        font-weight: 600;
+        transition: background 0.3s;
+        }
+
+        .wrapper .btn:hover {
+        background: #e68a00;
+        }
+
+        .wrapper .register-link {
+        font-size: 14px;
+        text-align: center;
+        margin-top: 20px;
+        }
+
+        .register-link a {
+        color: #131921;
+        text-decoration: none;
+        font-weight: 600;
+        }
+
+        .register-link a:hover {
+        text-decoration: underline;
+        }
+    </style>
+    </head>
+    <body>
+    <div class="wrapper">
+        <form action="ok.html" method="post">
+        <h1>Create New Account</h1>
+
+        <div class="input-box">
+            <input type="text" placeholder="Full Name" required />
+            <i class='bx bx-user'></i>
+        </div>
+
+        <div class="input-box">
+            <input type="email" placeholder="Email Address" required />
+            <i class='bx bx-envelope'></i>
+        </div>
+
+        <div class="input-box">
+            <input type="text" placeholder="Username" required />
+            <i class='bx bx-id-card'></i>
+        </div>
+
+        <div class="input-box">
+            <input type="password" placeholder="Password" required />
+            <i class='bx bx-lock-alt'></i>
+        </div>
+
+        <div class="input-box">
+            <input type="password" placeholder="Confirm Password" required />
+            <i class='bx bx-lock-open-alt'></i>
+        </div>
+
+        <button type="submit" class="btn">Sign Up Now</button>
+
+        <div class="register-link">
+            <p>Already have an account? <a href="checkout.html">Log In</a></p>
+        </div>
+        </form>
+    </div>
+    </body>
+    </html>

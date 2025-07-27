@@ -1,0 +1,99 @@
+
+body {
+
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: url(./img/bg1.jpg);
+    background-size: cover;
+    background-position:center 20%;
+}
+
+.title {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.title h1 {
+    font-size: 48px;
+    color: #000000;
+    margin: 0;
+}
+
+.all_dress {
+    
+    
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.product-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+}
+
+.product-card > div.image {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+}
+
+.product-details {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 10px;
+    transition: max-height 0.4s ease, padding 0.4s ease;
+}
+
+.product-card:hover .product-details {
+    max-height: 300px;
+    padding: 10px;
+}
+
+.product-details h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.product-details p {
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.stars {
+    color: gold;
+    margin-bottom: 5px;
+}
+
+.price {
+    font-weight: bold;
+    color: #ff9900;
+    margin-bottom: 10px;
+}
+
+.btn-view {
+    display: inline-block;
+    background-color: #b8860b;
+    color: white;
+    padding: 8px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.btn-view:hover {
+    background-color: #a0750a;
+}

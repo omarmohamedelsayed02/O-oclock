@@ -1,0 +1,612 @@
+/* profile.css */
+
+.profile-main-content {
+    padding-top: 70px; /* Adjust for fixed header */
+    max-width: 960px; /* Standard Facebook profile width */
+    margin: 0 auto;
+    background-color: var(--background-color);
+}
+
+.profile-cover-section {
+    background-color: var(--card-background);
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    box-shadow: var(--shadow-small);
+    margin-bottom: 20px;
+}
+
+.cover-photo-container {
+    width: 100%;
+    height: 350px; /* Adjust height as needed */
+    background-color: #ccc; /* Placeholder */
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    overflow: hidden;
+    position: relative;
+}
+
+.cover-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-header-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end; /* Align buttons/name at bottom */
+    padding: 0 20px 20px 20px;
+    position: relative;
+}
+
+.profile-info {
+    display: flex;
+    align-items: flex-end;
+    gap: 20px;
+    margin-top: -80px; /* Pull profile pic up over cover */
+}
+
+.profile-picture-container {
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    border: 4px solid var(--card-background);
+    overflow: hidden;
+    box-shadow: var(--shadow-small);
+    position: relative;
+}
+
+.profile-picture {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-pic-camera-icon {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: var(--facebook-gray);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    color: var(--text-color);
+    cursor: pointer;
+    border: 1px solid var(--border-color);
+}
+
+.profile-text-info {
+    margin-bottom: 10px;
+}
+
+.profile-name {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 5px;
+}
+
+.profile-friends-count {
+    font-size: 18px;
+    color: var(--secondary-text);
+}
+
+.friends-avatars {
+    display: flex;
+    margin-top: 5px;
+}
+
+.friends-avatars img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid var(--card-background);
+    margin-right: -8px; /* Overlap effect */
+    object-fit: cover;
+}
+
+.profile-actions {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.profile-button {
+    background-color: var(--facebook-blue);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 15px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.2s ease;
+}
+   .profile-name { padding-bottom: 10px;
+                                font-size: 28px;
+                                font-weight: bold;
+                                color: #333;
+                                margin: -16px;
+                            }
+
+                              .holder-text1 {
+                width: 100%;
+                padding: 10px;
+                border: none;
+                border-radius: 12px;
+                background-color: #f0f2f5;
+                font-size: 16px;
+                color: #333;
+            }
+            .holder-text1::placeholder {
+                color: #888;
+            }
+
+              .post-options {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+border: none; }
+            .post-options button {
+                flex: 1;
+                margin: 0 5px;
+                padding: 10px;
+                border: none;
+                border-radius: 12px;
+                background-color: #f0f2f5;
+                color: #333;
+                font-size: 14px;
+                cursor: pointer;
+            }
+            .post-options button i {
+                margin-right: 5px;
+            }
+            .post-options button:hover {
+                background-color: #e4e6eb;
+            }
+.profile-button:hover {
+    background-color: #2e69ee;}
+.profile-button.add-story {
+    background-color: #e7f3ff;
+    color: var(--facebook-blue);   
+}
+.profile-button.add-story:hover {
+    background-color: #cfe7ff;
+}
+.profile-button.more-options {
+    background-color: var(--facebook-gray);
+    color: var(--text-color); 
+}
+.profile-button.more-options:hover {
+    background-color: #d8dadf;
+}
+
+
+ .post-card-card>.post-header>.post-author-pic{
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+    }
+    .post-card-card{
+        width: 100%;
+        max-width: 600px;
+        margin: 20px auto;
+        background-color: #fff;
+        border-radius: 12px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        padding: 16px;
+    }
+
+.post-image {
+    width: 100%;
+    max-height: 500px; /* أقصى ارتفاع للصور */
+    object-fit: contain; /* عشان متتشوهش وتظهر كاملة */
+    border-radius: var(--border-radius-medium);
+    margin-bottom: 12px;
+}
+.profile-button:hover {
+    background-color: #2e69ee;
+}
+
+.profile-button.add-story {
+    background-color: #e7f3ff;
+    color: var(--facebook-blue);
+}
+.profile-button.add-story:hover {
+    background-color: #cfe7ff;
+}
+
+.profile-button.more-options {
+    background-color: var(--facebook-gray);
+    color: var(--text-color);
+}
+
+.profile-button.more-options:hover {
+    background-color: #d8dadf;
+}
+
+.profile-nav {
+    display: flex;
+    border-top: 1px solid var(--border-color);
+    margin-top: 20px;
+    padding: 0 20px;
+    justify-content: space-between;
+}
+
+.profile-nav-left {
+    display: flex;
+    gap: 5px;
+}
+
+.profile-nav-item {
+    padding: 15px 0;
+    color: var(--secondary-text);
+    font-weight: 600;
+    text-decoration: none;
+    position: relative;
+    transition: color 0.2s ease;
+}
+
+.profile-nav-item:hover {
+    background-color: var(--facebook-gray);
+    border-radius: 6px;
+    padding: 15px 10px; /* Add padding on hover */
+    margin: 0 -10px; /* Adjust margin to compensate padding */
+    color: var(--text-color);
+}
+
+.profile-nav-item.active {
+    color: var(--facebook-blue);
+}
+
+.profile-nav-item.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--facebook-blue);
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+}
+
+.profile-nav-more {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    color: var(--secondary-text);
+    padding: 15px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.profile-nav-more:hover {
+    background-color: var(--facebook-gray);
+}
+
+.profile-nav-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Profile Content Area */
+.profile-content {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    align-items: flex-start; /* Align columns to the top */
+}
+
+.profile-left-column {
+    flex: 1;
+    max-width: 400px; /* Adjust width as needed */
+}
+
+.profile-right-column {
+    flex: 2;
+    max-width: 540px; /* Adjust width as needed */
+}
+
+/* Intro Section */
+.profile-intro-section {
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.intro-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    font-size: 15px;
+    color: var(--text-color);
+}
+
+.intro-item i {
+    font-size: 20px;
+    color: var(--secondary-text);
+    width: 24px;
+    text-align: center;
+}
+
+.intro-action-button {
+    background-color: var(--facebook-gray);
+    color: var(--facebook-blue);
+    border: none;
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-size: 14px;
+    font-weight: 600;
+    width: 100%;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.intro-action-button:hover {
+    background-color: #d8dadf;
+}
+
+/* Photos Section */
+.profile-photos-section {
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.photos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+    margin-top: 10px;
+}
+
+.photos-grid img {
+    width: 100%;
+    height: 100px; /* Fixed height for consistent grid */
+    object-fit: cover;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Friends Section (similar to photos) */
+.profile-friends-section {
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.friends-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+    margin-top: 10px;
+}
+
+.friend-card {
+    background-color: var(--background-color);
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.friend-card img {
+    width: 100%;
+    height: 90px;
+    object-fit: cover;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.friend-card span {
+    display: block;
+    padding: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+/* Responsive adjustments for Profile Page */
+@media (max-width: 992px) {
+    .profile-main-content {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .profile-cover-section {
+        border-radius: 0;
+    }
+    .profile-header-details {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding-bottom: 10px;
+    }
+    .profile-info {
+        flex-direction: column;
+        align-items: center;
+        margin-top: -60px;
+        gap: 10px;
+    }
+    .profile-picture-container {
+        width: 120px;
+        height: 120px;
+    }
+    .profile-text-info {
+        margin-bottom: 0;
+    }
+    .profile-name {
+        font-size: 28px;
+    }
+    .profile-friends-count {
+        font-size: 16px;
+    }
+    .profile-actions {
+        margin-top: 15px;
+        justify-content: center;
+    }
+    .profile-nav {
+        padding: 0 10px;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    .profile-nav-left {
+        gap: 10px;
+        justify-content: center;
+    }
+    .profile-nav-right {
+        margin-top: 10px;
+        justify-content: center;
+        width: 100%;
+    }
+    .profile-content {
+        flex-direction: column;
+        padding: 10px;
+    }
+    .profile-left-column, .profile-right-column {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .profile-cover-section {
+        border-radius: 0;
+    }
+    .cover-photo-container {
+        height: 200px;
+    }
+    .profile-info {
+        margin-top: -40px;
+    }
+    .profile-picture-container {
+        width: 100px;
+        height: 100px;
+    }
+    .profile-name {
+        font-size: 24px;
+    }
+    .profile-friends-count {
+        font-size: 14px;
+    }
+    .profile-button {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+    .profile-nav-item {
+        padding: 12px 0;
+        font-size: 14px;
+    }
+    .profile-nav-more {
+        padding: 12px 8px;
+        font-size: 14px;
+    }
+    .photos-grid img, .friend-card img {
+        height: 80px;
+    }
+}
+
+@media (max-width: 576px) {
+    .profile-main-content {
+        padding: 0;
+    }
+    .profile-cover-section {
+        margin-bottom: 10px;
+    }
+    .cover-photo-container {
+        height: 150px;
+    }
+    .profile-header-details {
+        padding: 0 10px 10px 10px;
+    }
+    .profile-info {
+        margin-top: -30px;
+    }
+    .profile-picture-container {
+        width: 80px;
+        height: 80px;
+        border-width: 2px;
+    }
+    .profile-pic-camera-icon {
+        width: 30px;
+        height: 30px;
+        font-size: 16px;
+    }
+    .profile-name {
+        font-size: 20px;
+    }
+    .profile-friends-count {
+        font-size: 12px;
+    }
+    .friends-avatars img {
+        width: 24px;
+        height: 24px;
+    }
+    .profile-actions {
+        flex-wrap: wrap;
+        gap: 5px;
+        justify-content: center;
+        width: 100%;
+    }
+    .profile-button {
+        width: calc(50% - 5px);
+        font-size: 13px;
+        padding: 8px 5px;
+        text-align: center;
+        justify-content: center;
+    }
+    .profile-nav {
+        overflow-x: auto;
+        justify-content: flex-start;
+        padding: 0 10px;
+        gap: 15px;
+        white-space: nowrap;
+    }
+    .profile-nav::-webkit-scrollbar {
+        display: none;
+    }
+    .profile-nav-item {
+        flex-shrink: 0;
+        padding: 10px 0;
+        font-size: 13px;
+    }
+    .profile-nav-item:hover {
+        padding: 10px 5px;
+        margin: 0 -5px;
+    }
+    .profile-nav-more {
+        flex-shrink: 0;
+        padding: 10px 5px;
+        font-size: 13px;
+    }
+    .profile-content {
+        padding: 10px;
+    }
+    .profile-intro-section,
+    .profile-photos-section,
+    .profile-friends-section {
+        padding: 10px;
+    }
+    .intro-item {
+        font-size: 14px;
+    }
+    .intro-item i {
+        font-size: 18px;
+    }
+    .intro-action-button {
+        font-size: 13px;
+        padding: 6px 10px;
+    }
+    .photos-grid, .friends-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .photos-grid img, .friend-card img {
+        height: 100px;
+    }
+}
